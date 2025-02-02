@@ -116,12 +116,12 @@ const techData: TechGroup[] = [
       },
       {
         name: 'Adobe XD',
-        icon: '/icons/adobexd.svg',
+        icon: '/icons/AdobeXD.svg',
         bgColor: '#FF61F6',
       },
       {
         name: 'Figma',
-        icon: '/icons/figma.svg',
+        icon: '/icons/Figma.svg',
         bgColor: '#000000',
       },
     ],
