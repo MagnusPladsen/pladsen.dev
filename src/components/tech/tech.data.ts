@@ -114,6 +114,16 @@ const techData: TechGroup[] = [
         icon: '/icons/docker.svg',
         bgColor: '#2496ED',
       },
+      {
+        name: 'Adobe XD',
+        icon: '/icons/adobexd.svg',
+        bgColor: '#FF61F6',
+      },
+      {
+        name: 'Figma',
+        icon: '/icons/figma.svg',
+        bgColor: '#000000',
+      },
     ],
   },
 ];
