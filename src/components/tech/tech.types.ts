@@ -2,6 +2,7 @@ interface Tech {
   name: string;
   icon?: string;
   bgColor?: string;
+  link: string;
 }
 
 interface TechGroup {
