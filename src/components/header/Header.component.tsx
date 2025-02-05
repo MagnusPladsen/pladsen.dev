@@ -13,13 +13,13 @@ export default function Header() {
                     <h2 className="text-2xl mb-4">Full-stack developer</h2>
 
                 </div>
-                <div className="hidden md:block">
+                <div className="hidden md:block -mb-8">
                     <Image
                         src="/avatar.png"
                         alt="Magnus Pladsen"
                         width={200}
                         height={200}
-                        className="rounded-full aspect-square w-[140px] h-[140px] object-cover"
+                        className="rounded-full aspect-square w-[140px] h-[140px] object-cover "
                     />
                 </div>
             </div>
