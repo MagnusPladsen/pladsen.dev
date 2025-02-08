@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import Link from 'next/link';
+import { ExternalLink } from 'lucide-react';
 
 export default function Journey() {
   const journeyItems = [
@@ -8,10 +8,7 @@ export default function Journey() {
       description: (
         <>
           Thrilled to be working as a full stack developer at{' '}
-          <span className="group-hover:text-primary transition-colors">
-            Abaris Consulting AS
-          </span>
-          .
+          <span className="group-hover:text-primary transition-colors">Abaris Consulting AS</span>.
         </>
       ),
       link: 'https://abaris.no',
@@ -21,10 +18,8 @@ export default function Journey() {
       description: (
         <>
           2 year frontend development course at{' '}
-          <span className="group-hover:text-primary transition-colors">
-            Noroff
-          </span>
-          . Graduated in 2024 with an A on the last exam.
+          <span className="group-hover:text-primary transition-colors">Noroff</span>. Graduated in 2024 with an A on the
+          last exam.
         </>
       ),
       link: 'https://noroff.no',
