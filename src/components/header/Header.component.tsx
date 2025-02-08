@@ -4,6 +4,7 @@ import Socials from './Socials.component';
 
 const getContactInfo = async (): Promise<ContactInfo> => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/contactInfo`, {
+        cache: 'no-store',
     });
     const data = await res.json();
     return data;
