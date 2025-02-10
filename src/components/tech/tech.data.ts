@@ -64,6 +64,12 @@ const techData: TechGroup[] = [
         bgColor: '#38BDF8',
         link: 'https://tailwindcss.com/',
       },
+      {
+        name: 'React Leaflet',
+        icon: '/icons/react-leaflet.svg',
+        bgColor: '#000000',
+        link: 'https://react-leaflet.js.org/',
+      },
     ],
   },
   {
@@ -105,6 +111,12 @@ const techData: TechGroup[] = [
         link: 'https://bitbucket.org/',
       },
       {
+        name: 'Jira',
+        icon: '/icons/jira.svg',
+        bgColor: '#0052CC',
+        link: 'https://jira.atlassian.com/',
+      },
+      {
         name: 'Azure',
         icon: '/icons/azure.svg',
         bgColor: '#0078D7',
@@ -133,6 +145,12 @@ const techData: TechGroup[] = [
         icon: '/icons/cursor.svg',
         bgColor: '#000000',
         link: 'https://www.cursor.com/',
+      },
+      {
+        name: 'Vercel',
+        icon: '/icons/vercel.svg',
+        bgColor: '#000000',
+        link: 'https://vercel.com/',
       },
       {
         name: 'GitHub',
@@ -170,6 +188,24 @@ const techData: TechGroup[] = [
         icon: '/icons/AdobeXD.svg',
         bgColor: '#FF61F6',
         link: 'https://www.adobe.com/products/xd.html',
+      },
+      {
+        name: 'Postman',
+        icon: '/icons/postman.svg',
+        bgColor: '#FF6C37',
+        link: 'https://www.postman.com/',
+      },
+      {
+        name: 'Bruno',
+        icon: '/icons/bruno.svg',
+        bgColor: '#FFFFFF',
+        link: 'https://www.usebruno.com/',
+      },
+      {
+        name: 'Swagger',
+        icon: '/icons/swagger.svg',
+        bgColor: '#85EA2D',
+        link: 'https://swagger.io/',
       },
     ],
   },
