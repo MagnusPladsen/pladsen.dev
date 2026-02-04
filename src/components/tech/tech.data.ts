@@ -209,6 +209,41 @@ const techData: TechGroup[] = [
       },
     ],
   },
+  {
+    name: 'AI Tools',
+    techs: [
+      {
+        name: 'Claude Code',
+        icon: '/icons/claude-code.svg',
+        bgColor: '#D97706',
+        link: 'https://www.anthropic.com/claude-code/',
+      },
+      {
+        name: 'Codex',
+        icon: '/icons/codex.svg',
+        bgColor: '#111827',
+        link: 'https://openai.com/codex/',
+      },
+      {
+        name: 'ChatGPT',
+        icon: '/icons/chatgpt.svg',
+        bgColor: '#10A37F',
+        link: 'https://openai.com/chatgpt/overview',
+      },
+      {
+        name: 'OpenWebUI',
+        icon: '/icons/openwebui.svg',
+        bgColor: '#111827',
+        link: 'https://github.com/open-webui/open-webui',
+      },
+      {
+        name: 'Crush',
+        icon: '/icons/crush.svg',
+        bgColor: '#EF476F',
+        link: 'https://github.com/charmbracelet/crush',
+      },
+    ],
+  },
 ];
 
 export default techData;
