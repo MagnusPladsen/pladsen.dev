@@ -202,6 +202,12 @@ const techData: TechGroup[] = [
         link: 'https://www.usebruno.com/',
       },
       {
+        name: 'DBeaver',
+        icon: '/icons/dbeaver.svg',
+        bgColor: '#4B5563',
+        link: 'https://dbeaver.io/',
+      },
+      {
         name: 'Swagger',
         icon: '/icons/swagger.svg',
         bgColor: '#85EA2D',
