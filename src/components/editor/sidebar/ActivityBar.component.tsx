@@ -12,9 +12,10 @@ const VIEWS: { id: SidebarView; label: string; Icon: LucideIcon }[] = [
 ];
 
 export function ActivityBar({ extensionCount }: { extensionCount: number }): ReactNode {
-  const { view, setView, isMobileSidebarOpen, setMobileSidebarOpen } = useEditorState();
+  const { view, setView, isMobileSidebarOpen, setMobileSidebarOpen, isSidebarOpen, setSidebarOpen } = useEditorState();
   const selectView = (id: SidebarView) => {
     setMobileSidebarOpen(id !== view || !isMobileSidebarOpen);
+    setSidebarOpen(id !== view || !isSidebarOpen);
     setView(id);
   };
   return (
