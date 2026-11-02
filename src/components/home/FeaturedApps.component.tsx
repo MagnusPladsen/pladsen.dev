@@ -24,7 +24,7 @@ export function FeaturedApps(): ReactNode {
         {FEATURED_APPS.map((app, index) => {
           const { name, desc } = content.featured[index];
           return (
-            <a key={app.url} href={app.url} target="_blank" rel="noreferrer" className="tile flex flex-col overflow-hidden" style={{ animationDelay: `${0.1 + index * 0.07}s` }}>
+            <a key={app.url} href={app.url} target="_blank" rel="noreferrer" className="group tile flex flex-col overflow-hidden" style={{ animationDelay: `${0.1 + index * 0.07}s` }}>
               <AppPreview app={app} name={name} />
               <div className="flex grow flex-col gap-1.5 p-4">
                 <div className="flex items-center justify-between">
