@@ -1,0 +1,2227 @@
+{
+ "data": {
+  "user": {
+   "repositories": {
+    "nodes": [
+     {
+      "name": "Proton-ish",
+      "url": "https://github.com/MagnusPladsen/Proton-ish",
+      "description": "Steam Play for macOS",
+      "isFork": true,
+      "stargazerCount": 37,
+      "createdAt": "2026-10-14T06:09:52Z",
+      "pushedAt": "2026-11-02T10:24:15Z",
+      "primaryLanguage": {
+       "name": "Scala",
+       "color": "#c22d40"
+      },
+      "latestRelease": {
+       "tagName": "v1.0.40",
+       "publishedAt": "2026-11-02T09:39:29Z",
+       "url": "https://github.com/MagnusPladsen/Proton-ish/releases/tag/v1.0.40"
+      }
+     },
+     {
+      "name": "gamedev-studio",
+      "url": "https://github.com/MagnusPladsen/gamedev-studio",
+      "description": "Free, open source game development toolkit \u2014 pixel art, music, SFX, tilemaps, dialogue trees, story & worldbuilding, logic diagrams. All connected. No watermarks, no paywalls.",
+      "isFork": false,
+      "stargazerCount": 0,
+      "createdAt": "2026-10-30T09:12:42Z",
+      "pushedAt": "2026-11-02T10:23:10Z",
+      "primaryLanguage": {
+       "name": "TypeScript",
+       "color": "#3178c6"
+      },
+      "latestRelease": {
+       "tagName": "v0.1.0-beta",
+       "publishedAt": "2026-10-31T09:10:01Z",
+       "url": "https://github.com/MagnusPladsen/gamedev-studio/releases/tag/v0.1.0-beta"
+      }
+     },
+     {
+      "name": "homebrew-tap",
+      "url": "https://github.com/MagnusPladsen/homebrew-tap",
+      "description": "Homebrew tap for Proton-ish",
+      "isFork": false,
+      "stargazerCount": 0,
+      "createdAt": "2026-10-14T19:21:56Z",
+      "pushedAt": "2026-11-02T09:39:36Z",
+      "primaryLanguage": {
+       "name": "Ruby",
+       "color": "#701516"
+      },
+      "latestRelease": null
+     },
+     {
+      "name": "claude-mods",
+      "url": "https://github.com/MagnusPladsen/claude-mods",
+      "description": "Personal global Claude Code mods",
+      "isFork": false,
+      "stargazerCount": 0,
+      "createdAt": "2026-10-14T11:09:04Z",
+      "pushedAt": "2026-10-30T13:40:47Z",
+      "primaryLanguage": null,
+      "latestRelease": null
+     },
+     {
+      "name": "dotfiles",
+      "url": "https://github.com/MagnusPladsen/dotfiles",
+      "description": "This is my dotfiles",
+      "isFork": false,
+      "stargazerCount": 0,
+      "createdAt": "2025-05-20T06:24:30Z",
+      "pushedAt": "2026-10-30T09:49:49Z",
+      "primaryLanguage": {
+       "name": "Shell",
+       "color": "#89e051"
+      },
+      "latestRelease": null
+     },
+     {
+      "name": "proton-ish-site",
+      "url": "https://github.com/MagnusPladsen/proton-ish-site",
+      "description": null,
+      "isFork": false,
+      "stargazerCount": 0,
+      "createdAt": "2026-10-23T12:31:11Z",
+      "pushedAt": "2026-10-28T12:42:43Z",
+      "primaryLanguage": {
+       "name": "TypeScript",
+       "color": "#3178c6"
+      },
+      "latestRelease": null
+     },
+     {
+      "name": "cheatsheet-app",
+      "url": "https://github.com/MagnusPladsen/cheatsheet-app",
+      "description": "Keybinding cheatsheet app \u2014 fetches live from dotfiles",
+      "isFork": false,
+      "stargazerCount": 1,
+      "createdAt": "2026-02-27T09:08:48Z",
+      "pushedAt": "2026-10-14T12:11:39Z",
+      "primaryLanguage": {
+       "name": "TypeScript",
+       "color": "#3178c6"
+      },
+      "latestRelease": {
+       "tagName": "v1.1.9",
+       "publishedAt": "2026-03-11T10:27:52Z",
+       "url": "https://github.com/MagnusPladsen/cheatsheet-app/releases/tag/v1.1.9"
+      }
+     },
+     {
+      "name": "Portfolio",
+      "url": "https://github.com/MagnusPladsen/Portfolio",
+      "description": "This is for a school assignment",
+      "isFork": false,
+      "stargazerCount": 1,
+      "createdAt": "2023-03-06T19:03:56Z",
+      "pushedAt": "2024-03-03T17:58:47Z",
+      "primaryLanguage": {
+       "name": "TypeScript",
+       "color": "#3178c6"
+      },
+      "latestRelease": null
+     }
+    ]
+   },
+   "recent": {
+    "nodes": [
+     {
+      "name": "Proton-ish",
+      "defaultBranchRef": {
+       "target": {
+        "history": {
+         "nodes": [
+          {
+           "oid": "51f5b47683e8c03d5c86f06e17685fd00a5ccfab",
+           "abbreviatedOid": "51f5b47",
+           "message": "Merge pull request #112 from MagnusPladsen/sync/highball-0.10.23-db-ecc333f\n\nsync: Highball db ecc333f (1.0.40)",
+           "messageHeadline": "Merge pull request #112 from MagnusPladsen/sync/highball-0.10.23-db-e\u2026",
+           "committedDate": "2026-11-02T09:12:14Z",
+           "additions": 3,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/Proton-ish/commit/51f5b47683e8c03d5c86f06e17685fd00a5ccfab"
+          },
+          {
+           "oid": "a0e26cb98c7736134b07245c2141aa1db229684e",
+           "abbreviatedOid": "a0e26cb",
+           "message": "Merge main into sync/highball-0.10.23-db-ecc333f\n\nBrings in the NotProton e67dd9b merge (1.0.39); this branch stays 1.0.40.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Merge main into sync/highball-0.10.23-db-ecc333f",
+           "committedDate": "2026-11-02T08:55:24Z",
+           "additions": 5839,
+           "deletions": 509,
+           "url": "https://github.com/MagnusPladsen/Proton-ish/commit/a0e26cb98c7736134b07245c2141aa1db229684e"
+          },
+          {
+           "oid": "2e9b8d5988e33c0b5414489b37b7e000fb8ef27b",
+           "abbreviatedOid": "2e9b8d5",
+           "message": "Merge pull request #113 from MagnusPladsen/sync/notproton-e67dd9b\n\nsync: merge NotProton e67dd9b (1.0.39)",
+           "messageHeadline": "Merge pull request #113 from MagnusPladsen/sync/notproton-e67dd9b",
+           "committedDate": "2026-11-02T08:55:10Z",
+           "additions": 5840,
+           "deletions": 510,
+           "url": "https://github.com/MagnusPladsen/Proton-ish/commit/2e9b8d5988e33c0b5414489b37b7e000fb8ef27b"
+          },
+          {
+           "oid": "f61435812458d1a12b7c86608a15384399de753e",
+           "abbreviatedOid": "f614358",
+           "message": "Expect the fork's variant key line in the template name test\n\nThe run script names variant runners <runtime>-<build>+<names>, so the key is cut after \"$np_runtime\"-\"$np_build\", not crossover-\"$np_build\".\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Expect the fork's variant key line in the template name test",
+           "committedDate": "2026-11-02T08:31:37Z",
+           "additions": 1,
+           "deletions": 1,
+           "url": "https://github.com/MagnusPladsen/Proton-ish/commit/f61435812458d1a12b7c86608a15384399de753e"
+          },
+          {
+           "oid": "02a3433ed138257daecbb9d6240ded382f9ac373",
+           "abbreviatedOid": "02a3433",
+           "message": "Expect the rebranded Steam bridge message in runnervariantcheck\n\nThe merge renamed the variant refusal to \"which carries Proton-ish's Steam bridge\"; the test still looked for NotProton's.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Expect the rebranded Steam bridge message in runnervariantcheck",
+           "committedDate": "2026-11-02T08:11:51Z",
+           "additions": 1,
+           "deletions": 1,
+           "url": "https://github.com/MagnusPladsen/Proton-ish/commit/02a3433ed138257daecbb9d6240ded382f9ac373"
+          },
+          {
+           "oid": "2f165ad68ccd03d3730b2e3982fbf471d9dad1a7",
+           "abbreviatedOid": "2f165ad",
+           "message": "Find the indented launcher and Highball forward in envcheck\n\nThe upstream merge moved the launcher heredoc into install_bundle and the\nHighball forwarding block into the LaunchServices branch of the launch, both\nnow indented. envcheck looked for them at the start of a line, found nothing\nand stopped; it now allows leading spaces.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Find the indented launcher and Highball forward in envcheck",
+           "committedDate": "2026-11-02T07:57:08Z",
+           "additions": 2,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/Proton-ish/commit/2f165ad68ccd03d3730b2e3982fbf471d9dad1a7"
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "name": "gamedev-studio",
+      "defaultBranchRef": {
+       "target": {
+        "history": {
+         "nodes": [
+          {
+           "oid": "2f2f07f5f89cfd5d8b21ad3ac0bf165a56f38ca8",
+           "abbreviatedOid": "2f2f07f",
+           "message": "fix: make the Story graph readable on phones\n\nOn a 390px phone the graph settled into a round blob that filled only the middle of a tall screen, so it fitted small and its centre labels piled on top of each other. The layout now re-settles for tall views with a stronger sideways pull so it fills the screen's height, and labels that would overlap are hidden, keeping highlighted and bigger entries first. Wide desktop views lay out exactly as before.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "fix: make the Story graph readable on phones",
+           "committedDate": "2026-11-02T10:23:08Z",
+           "additions": 127,
+           "deletions": 17,
+           "url": "https://github.com/MagnusPladsen/gamedev-studio/commit/2f2f07f5f89cfd5d8b21ad3ac0bf165a56f38ca8"
+          },
+          {
+           "oid": "ec6216adc86f9d885d1ace787241dc5393a69925",
+           "abbreviatedOid": "ec6216a",
+           "message": "feat: interactive force-directed Story connection graph\n\nThe old graph was a fixed ring of circles that got unreadable past a\nhandful of entries. The new view lays entries out with a small\nforce simulation (no new dependency), sizes nodes by connections,\ncolours them by entry type, and shows wiki links dashed. It can be\npanned, zoomed (wheel, buttons, pinch), nodes can be dragged, hover\nhighlights a node's neighbours and a search box focuses a node.\nLinked non-story assets can be toggled on as smaller outlined nodes.\n\nThe layout, graph building and camera maths live in src/lib so they\nare unit tested; the view is split into src/components/story.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "feat: interactive force-directed Story connection graph",
+           "committedDate": "2026-11-02T09:45:44Z",
+           "additions": 1224,
+           "deletions": 108,
+           "url": "https://github.com/MagnusPladsen/gamedev-studio/commit/ec6216adc86f9d885d1ace787241dc5393a69925"
+          },
+          {
+           "oid": "95a98d0d90ca604e06a78ab75b1bb8df41c57868",
+           "abbreviatedOid": "95a98d0",
+           "message": "Update the landing canvas screenshot to the new moodboard\n\nThe example moodboard was reworked into three sections, so the landing page's screenshot showed a layout the app no longer has. Recaptured it and updated its size and alt text.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "Update the landing canvas screenshot to the new moodboard",
+           "committedDate": "2026-11-02T09:44:20Z",
+           "additions": 3,
+           "deletions": 3,
+           "url": "https://github.com/MagnusPladsen/gamedev-studio/commit/95a98d0d90ca604e06a78ab75b1bb8df41c57868"
+          },
+          {
+           "oid": "e366fd4cd8f0c99f26819e7e19ca3f9bc2b002fd",
+           "abbreviatedOid": "e366fd4",
+           "message": "feat: polish the Canvas example boards and add a core-loop board\n\nThe example boards had cards floating outside their sections, edge labels\nsqueezed into gaps and only a slice of what the canvas can do. Every board\nnow has a clear purpose, sections on a consistent grid and a mix of cards:\nreal project assets, video and song links, sticky notes, to-do lists and\nfreehand pen strokes.\n\n- Moodboard: look, sound and game-feel sections; a hand-drawn jump arc\n  shows full jump vs short hop next to the GMTK Celeste video.\n- Level plan: three beats plus a marked-up side-view sketch (red pen over\n  the coin jump and the flag) and a \"Build it\" section with the tilemap,\n  story entry and to-do list.\n- New \"Pip's Core Loop\": a flow chart using every flow and basic shape,\n  each step wired to the asset behind it, with the fun bit circled.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "feat: polish the Canvas example boards and add a core-loop board",
+           "committedDate": "2026-11-02T09:43:25Z",
+           "additions": 230,
+           "deletions": 62,
+           "url": "https://github.com/MagnusPladsen/gamedev-studio/commit/e366fd4cd8f0c99f26819e7e19ca3f9bc2b002fd"
+          },
+          {
+           "oid": "c66794a410ffe00bead409c29fe023522f4ac786",
+           "abbreviatedOid": "c66794a",
+           "message": "fix: tidy the account status in the sidebar\n\nWhen signed in, the sync state sat on its own line above the email and could\nend up as a lone checkmark. Up-to-date sync is now a small green tick on the\naccount row's cloud icon (with a tooltip and screen-reader text); a status\nline only appears while saving or on an error, with its text in its own\nelement so the icon can never be left alone.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_015jJxZ5jKQn8i67WXczduBY",
+           "messageHeadline": "fix: tidy the account status in the sidebar",
+           "committedDate": "2026-11-02T09:40:47Z",
+           "additions": 28,
+           "deletions": 17,
+           "url": "https://github.com/MagnusPladsen/gamedev-studio/commit/c66794a410ffe00bead409c29fe023522f4ac786"
+          },
+          {
+           "oid": "691778377fa33e052690408111a1309f62387721",
+           "abbreviatedOid": "6917783",
+           "message": "feat: sort the project's asset list, recent first by default\n\nThe owner wanted the dashboard's \"Everything in this project\" list visibly sorted by most recent. It already sorted by last edit, but examples share one timestamp so the order looked random. A Sort control now offers Recent first (default), Name A\u2013Z and By tool, and ties fall back to name.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "feat: sort the project's asset list, recent first by default",
+           "committedDate": "2026-11-02T09:32:22Z",
+           "additions": 29,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/gamedev-studio/commit/691778377fa33e052690408111a1309f62387721"
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "name": "homebrew-tap",
+      "defaultBranchRef": {
+       "target": {
+        "history": {
+         "nodes": [
+          {
+           "oid": "ef09c0fb996f81d325bc68296c9b1a2fcc4355b0",
+           "abbreviatedOid": "ef09c0f",
+           "message": "Update proton-ish to 1.0.40",
+           "messageHeadline": "Update proton-ish to 1.0.40",
+           "committedDate": "2026-11-02T09:39:34Z",
+           "additions": 2,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/homebrew-tap/commit/ef09c0fb996f81d325bc68296c9b1a2fcc4355b0"
+          },
+          {
+           "oid": "d66b2f74acd636b0c9b623ab384d78c5e3c8d5ec",
+           "abbreviatedOid": "d66b2f7",
+           "message": "Update proton-ish to 1.0.39",
+           "messageHeadline": "Update proton-ish to 1.0.39",
+           "committedDate": "2026-11-02T09:16:41Z",
+           "additions": 2,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/homebrew-tap/commit/d66b2f74acd636b0c9b623ab384d78c5e3c8d5ec"
+          },
+          {
+           "oid": "6c8638ea885e3f0ff208064c19bcd0ab7682c27f",
+           "abbreviatedOid": "6c8638e",
+           "message": "Update proton-ish to 1.0.38",
+           "messageHeadline": "Update proton-ish to 1.0.38",
+           "committedDate": "2026-11-02T08:12:37Z",
+           "additions": 2,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/homebrew-tap/commit/6c8638ea885e3f0ff208064c19bcd0ab7682c27f"
+          },
+          {
+           "oid": "2206321af380b81422c4a015ae458f34c5d009b3",
+           "abbreviatedOid": "2206321",
+           "message": "Update proton-ish to 1.0.37",
+           "messageHeadline": "Update proton-ish to 1.0.37",
+           "committedDate": "2026-10-30T18:37:21Z",
+           "additions": 2,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/homebrew-tap/commit/2206321af380b81422c4a015ae458f34c5d009b3"
+          },
+          {
+           "oid": "3c33b18614db2ae67b178737cab65c60761a4159",
+           "abbreviatedOid": "3c33b18",
+           "message": "Update proton-ish to 1.0.36",
+           "messageHeadline": "Update proton-ish to 1.0.36",
+           "committedDate": "2026-10-30T01:32:00Z",
+           "additions": 2,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/homebrew-tap/commit/3c33b18614db2ae67b178737cab65c60761a4159"
+          },
+          {
+           "oid": "935be4aadaa41b66b3eb3b68f049208fa926ea0c",
+           "abbreviatedOid": "935be4a",
+           "message": "Update proton-ish to 1.0.35",
+           "messageHeadline": "Update proton-ish to 1.0.35",
+           "committedDate": "2026-10-29T19:31:41Z",
+           "additions": 2,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/homebrew-tap/commit/935be4aadaa41b66b3eb3b68f049208fa926ea0c"
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "name": "claude-mods",
+      "defaultBranchRef": {
+       "target": {
+        "history": {
+         "nodes": [
+          {
+           "oid": "9a49ad78a5b08ad14b9f1d97fb52912c4a15cbdb",
+           "abbreviatedOid": "9a49ad7",
+           "message": "Remove usage-warn and filetree-collapsible mods",
+           "messageHeadline": "Remove usage-warn and filetree-collapsible mods",
+           "committedDate": "2026-10-30T13:40:09Z",
+           "additions": 7,
+           "deletions": 5386,
+           "url": "https://github.com/MagnusPladsen/claude-mods/commit/9a49ad78a5b08ad14b9f1d97fb52912c4a15cbdb"
+          },
+          {
+           "oid": "0e01eb66af349425381c87c62e41d8aa5a74c044",
+           "abbreviatedOid": "0e01eb6",
+           "message": "usage-warn: Add usage circles above the prompt\n\n- Draw one circle per usage window in use at the right end of the band\n  above the prompt; nothing at 0%\n- Color by threshold: success below the start percent, warning from it,\n  error from the notification percent\n- Reveal the details text on hover; a click on a circle pins it open\n- Keep readings and the pinned state in $.state with a types contract\n- Track model-scoped weekly windows (seven_day_*) when the engine\n  reports them, labelled 7d <model>\n- Add a \"Usage circles\" setting, bump to 0.3.0, update README and tests\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>",
+           "messageHeadline": "usage-warn: Add usage circles above the prompt",
+           "committedDate": "2026-10-15T10:56:06Z",
+           "additions": 221,
+           "deletions": 35,
+           "url": "https://github.com/MagnusPladsen/claude-mods/commit/0e01eb66af349425381c87c62e41d8aa5a74c044"
+          },
+          {
+           "oid": "0424219620ad990c7135f2d43f0b6274c20122cf",
+           "abbreviatedOid": "0424219",
+           "message": "Add install instructions to README\n\n- Paste-into-Claude install prompt and manual steps\n- Note that the filetree-collapsible README describes upstream install\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "Add install instructions to README",
+           "committedDate": "2026-10-14T11:24:09Z",
+           "additions": 38,
+           "deletions": 0,
+           "url": "https://github.com/MagnusPladsen/claude-mods/commit/0424219620ad990c7135f2d43f0b6274c20122cf"
+          },
+          {
+           "oid": "bad77868091c6ae9215a74ab4adc14024fcbc1ec",
+           "abbreviatedOid": "bad7786",
+           "message": "Add personal Claude Code mods\n\n- Move usage-warn and filetree-collapsible out of the dotfiles repo\n- Include pending work: usage-warn 7-day window, pace forecast and chime;\n  filetree-collapsible worktree support\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "Add personal Claude Code mods",
+           "committedDate": "2026-10-14T11:08:57Z",
+           "additions": 5179,
+           "deletions": 0,
+           "url": "https://github.com/MagnusPladsen/claude-mods/commit/bad77868091c6ae9215a74ab4adc14024fcbc1ec"
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "name": "dotfiles",
+      "defaultBranchRef": {
+       "target": {
+        "history": {
+         "nodes": [
+          {
+           "oid": "eae9d3f84dd99ea68ec7d7e55732dcd5299a3ab6",
+           "abbreviatedOid": "eae9d3f",
+           "message": "Add full new-Mac bootstrap guide and Brewfile\n\n- Add 8-phase setup guide to README: bare repo clone, Homebrew\n  bundle, Oh My Zsh + p10k, macOS defaults (keyboard, Dock, Finder,\n  window rounding, AeroSpace settings), app install list, services,\n  machine-local files checklist, and verification steps\n- Add Brewfile with essential formulae, casks, and fonts\n- Track Brewfile in .gitignore allowlist\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+           "messageHeadline": "Add full new-Mac bootstrap guide and Brewfile",
+           "committedDate": "2026-10-30T09:49:42Z",
+           "additions": 467,
+           "deletions": 0,
+           "url": "https://github.com/MagnusPladsen/dotfiles/commit/eae9d3f84dd99ea68ec7d7e55732dcd5299a3ab6"
+          },
+          {
+           "oid": "20b45f63bf1f7f629526c6b1a6ade31bbce4268d",
+           "abbreviatedOid": "20b45f6",
+           "message": "Stop loading the usage-warn and filetree mods\n\n- Drop CLAUDE_CODE_PLUGIN_DIRS from settings.json\n- Note in the README that the mods are not loaded by default\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "Stop loading the usage-warn and filetree mods",
+           "committedDate": "2026-10-30T09:23:40Z",
+           "additions": 3,
+           "deletions": 4,
+           "url": "https://github.com/MagnusPladsen/dotfiles/commit/20b45f63bf1f7f629526c6b1a6ade31bbce4268d"
+          },
+          {
+           "oid": "fa5db0c3380f370ab3dad772c48d415b733773d7",
+           "abbreviatedOid": "fa5db0c",
+           "message": "Remove the agents-rail mod\n\n- Point the claude-mods submodule at 0e01eb6, dropping agents-rail\n- Drop agents-rail from the README\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "Remove the agents-rail mod",
+           "committedDate": "2026-10-30T09:19:08Z",
+           "additions": 2,
+           "deletions": 2,
+           "url": "https://github.com/MagnusPladsen/dotfiles/commit/fa5db0c3380f370ab3dad772c48d415b733773d7"
+          },
+          {
+           "oid": "85e8cff75a6be7f05b5d4a42aabb435e4623b619",
+           "abbreviatedOid": "85e8cff",
+           "message": "Load usage-warn and filetree mods, switch to Concise output style\n\n- Add CLAUDE_CODE_PLUGIN_DIRS for the usage-warn and\n  filetree-collapsible mods\n- Switch outputStyle from Grumpy Norwegian Sysadmin to Concise\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "Load usage-warn and filetree mods, switch to Concise output style",
+           "committedDate": "2026-10-29T12:52:53Z",
+           "additions": 4,
+           "deletions": 3,
+           "url": "https://github.com/MagnusPladsen/dotfiles/commit/85e8cff75a6be7f05b5d4a42aabb435e4623b619"
+          },
+          {
+           "oid": "0b834df2ec88c8dfe5337fb02283c3c56aa548c1",
+           "abbreviatedOid": "0b834df",
+           "message": "Pad sketchybar clock clear of the recording indicator dot\n\n- Add padding_right=12 to the clock so macOS's purple screen/audio\n  recording dot no longer covers the time\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "Pad sketchybar clock clear of the recording indicator dot",
+           "committedDate": "2026-10-29T12:51:58Z",
+           "additions": 1,
+           "deletions": 0,
+           "url": "https://github.com/MagnusPladsen/dotfiles/commit/0b834df2ec88c8dfe5337fb02283c3c56aa548c1"
+          },
+          {
+           "oid": "a777598edcee0358feddd60144e363775f42aba7",
+           "abbreviatedOid": "a777598",
+           "message": "Skip worktrees and backups in copy-project-env\n\n- Leave out .claude/worktrees, node_modules, build caches, .DS_Store and .env.bak-* backups\n- Fix the copy count, which was lost in a subshell\n- Copy the root .env once instead of twice\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+           "messageHeadline": "Skip worktrees and backups in copy-project-env",
+           "committedDate": "2026-10-28T11:46:16Z",
+           "additions": 15,
+           "deletions": 6,
+           "url": "https://github.com/MagnusPladsen/dotfiles/commit/a777598edcee0358feddd60144e363775f42aba7"
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "name": "proton-ish-site",
+      "defaultBranchRef": {
+       "target": {
+        "history": {
+         "nodes": [
+          {
+           "oid": "d6900235a74924d165486d7035dfa28ac405d8c8",
+           "abbreviatedOid": "d690023",
+           "message": "Mention the app's built-in Winetricks window\n\nProton-ish 1.0.32 brings NotProton's Winetricks window, so the per-game fixes\ncard says it's there.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Mention the app's built-in Winetricks window",
+           "committedDate": "2026-10-28T12:42:42Z",
+           "additions": 1,
+           "deletions": 1,
+           "url": "https://github.com/MagnusPladsen/proton-ish-site/commit/d6900235a74924d165486d7035dfa28ac405d8c8"
+          },
+          {
+           "oid": "69136030232cbef03e16b7b4add37f70d1674178",
+           "abbreviatedOid": "6913603",
+           "message": "Show page visits next to stars and downloads\n\nA visits pill joins the hero's GitHub stars and downloads. Abacus, a free\ncounter with a JSON API, counts one visit per browser session; localhost only\nreads the count. The footer's hits.sh badge goes, so the page shows one visits\nnumber.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Show page visits next to stars and downloads",
+           "committedDate": "2026-10-23T13:52:14Z",
+           "additions": 60,
+           "deletions": 18,
+           "url": "https://github.com/MagnusPladsen/proton-ish-site/commit/69136030232cbef03e16b7b4add37f70d1674178"
+          },
+          {
+           "oid": "8c89248ff0f8e17d47ad98d69ef5d0613913011a",
+           "abbreviatedOid": "8c89248",
+           "message": "Show The Witcher 3 in the Mac Steam library as the hero\n\nA full-window capture of the Steam library on macOS, with names and avatars\nblurred, replacing the Emberward capture removed in the previous commit.\nmacOS draws its own corners and traffic lights, so it sits in a plain rounded\nframe instead of the site's window chrome. The floating card now says the game\nis in the Mac library, ready for Steam Play. A capture of the game running\nreplaces it later.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Show The Witcher 3 in the Mac Steam library as the hero",
+           "committedDate": "2026-10-23T13:41:19Z",
+           "additions": 13,
+           "deletions": 14,
+           "url": "https://github.com/MagnusPladsen/proton-ish-site/commit/8c89248ff0f8e17d47ad98d69ef5d0613913011a"
+          },
+          {
+           "oid": "0323d6a7150df7420beab45635185e90b8608e47",
+           "abbreviatedOid": "0323d6a",
+           "message": "Prerender the page and add structured data, sitemap and social tags\n\nThe build now renders the page to HTML, so crawlers and link previews see all\nof it and the browser hydrates it. The prerender step adds JSON-LD for the\nsite, the app and the FAQ, and writes a dated sitemap. Closed FAQ answers and\ninactive tabs stay in the page, hidden, so their text is in the HTML too.\n\nThe head gets a keyword-led title and description, robots, Open Graph and\nTwitter tags with image size and alt text, and a web manifest. Also adds\nrobots.txt, llms.txt, 192 and 512 px icons, and a branded 1200x630 og.jpg.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Prerender the page and add structured data, sitemap and social tags",
+           "committedDate": "2026-10-23T13:41:09Z",
+           "additions": 249,
+           "deletions": 15,
+           "url": "https://github.com/MagnusPladsen/proton-ish-site/commit/0323d6a7150df7420beab45635185e90b8608e47"
+          },
+          {
+           "oid": "d45f0c0715feadbdc922e5956137a67a45943666",
+           "abbreviatedOid": "d45f0c0",
+           "message": "Switch to the new wine-glass app icon and note where content comes from\n\nThe icon script now draws Proton-ish's new icon: a wine glass inside a sky\nand a lavender orbit on night blue. The favicon and Apple touch icon are\nregenerated from it. CLAUDE.md records that the site follows the Proton-ish\nrepo for copy, icon and screenshots.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Switch to the new wine-glass app icon and note where content comes from",
+           "committedDate": "2026-10-23T13:02:41Z",
+           "additions": 120,
+           "deletions": 80,
+           "url": "https://github.com/MagnusPladsen/proton-ish-site/commit/d45f0c0715feadbdc922e5956137a67a45943666"
+          },
+          {
+           "oid": "a3aa9e686068adbfbdd1addeb8255ddbcada7bd0",
+           "abbreviatedOid": "a3aa9e6",
+           "message": "Show the app's real icon, GitHub stars, downloads and visits\n\n- The icon is the app's own: scripts/app-icon.py draws public/app-icon.svg\n  from the geometry in Proton-ish's helpers/icon.swift (teal gradient,\n  crossed orbits, drop and electron); it is also the favicon and the\n  Apple touch icon\n- The hero shows GitHub stars and Proton-ish.zip downloads across all\n  releases, read from GitHub's API, beside the latest version\n- The footer shows a hits.sh visits badge, and drops it if it can't load\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01VM59ghZ8JBgbMzVjERoDbt",
+           "messageHeadline": "Show the app's real icon, GitHub stars, downloads and visits",
+           "committedDate": "2026-10-23T12:49:20Z",
+           "additions": 243,
+           "deletions": 78,
+           "url": "https://github.com/MagnusPladsen/proton-ish-site/commit/a3aa9e686068adbfbdd1addeb8255ddbcada7bd0"
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "name": "Portfolio",
+      "defaultBranchRef": null
+     }
+    ]
+   },
+   "contributionsCollection": {
+    "contributionCalendar": {
+     "weeks": [
+      {
+       "contributionDays": [
+        {
+         "date": "2025-11-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-03",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-04",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-05",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-06",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-07",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-08",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2025-11-09",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-10",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-11",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-12",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-13",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-14",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-15",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2025-11-16",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-17",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-18",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-19",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-20",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-21",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-22",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2025-11-23",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-24",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-25",
+         "contributionCount": 2
+        },
+        {
+         "date": "2025-11-26",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-27",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-11-29",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2025-11-30",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-01",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-03",
+         "contributionCount": 8
+        },
+        {
+         "date": "2025-12-04",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-05",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-06",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2025-12-07",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-08",
+         "contributionCount": 8
+        },
+        {
+         "date": "2025-12-09",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-10",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-11",
+         "contributionCount": 4
+        },
+        {
+         "date": "2025-12-12",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-13",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2025-12-14",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-15",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-16",
+         "contributionCount": 2
+        },
+        {
+         "date": "2025-12-17",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-18",
+         "contributionCount": 8
+        },
+        {
+         "date": "2025-12-19",
+         "contributionCount": 5
+        },
+        {
+         "date": "2025-12-20",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2025-12-21",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-22",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-23",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-24",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-25",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-26",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-27",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2025-12-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-29",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-30",
+         "contributionCount": 0
+        },
+        {
+         "date": "2025-12-31",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-01",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-03",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-01-04",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-05",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-06",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-07",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-08",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-09",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-10",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-01-11",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-12",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-13",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-14",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-15",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-16",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-17",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-01-18",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-19",
+         "contributionCount": 2
+        },
+        {
+         "date": "2026-01-20",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-21",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-22",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-23",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-24",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-01-25",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-26",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-27",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-29",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-30",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-01-31",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-02-01",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-03",
+         "contributionCount": 48
+        },
+        {
+         "date": "2026-02-04",
+         "contributionCount": 37
+        },
+        {
+         "date": "2026-02-05",
+         "contributionCount": 23
+        },
+        {
+         "date": "2026-02-06",
+         "contributionCount": 40
+        },
+        {
+         "date": "2026-02-07",
+         "contributionCount": 2
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-02-08",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-09",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-10",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-11",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-12",
+         "contributionCount": 12
+        },
+        {
+         "date": "2026-02-13",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-14",
+         "contributionCount": 56
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-02-15",
+         "contributionCount": 160
+        },
+        {
+         "date": "2026-02-16",
+         "contributionCount": 5
+        },
+        {
+         "date": "2026-02-17",
+         "contributionCount": 68
+        },
+        {
+         "date": "2026-02-18",
+         "contributionCount": 5
+        },
+        {
+         "date": "2026-02-19",
+         "contributionCount": 41
+        },
+        {
+         "date": "2026-02-20",
+         "contributionCount": 3
+        },
+        {
+         "date": "2026-02-21",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-02-22",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-23",
+         "contributionCount": 6
+        },
+        {
+         "date": "2026-02-24",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-25",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-02-26",
+         "contributionCount": 13
+        },
+        {
+         "date": "2026-02-27",
+         "contributionCount": 39
+        },
+        {
+         "date": "2026-02-28",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-03-01",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-03-02",
+         "contributionCount": 4
+        },
+        {
+         "date": "2026-03-03",
+         "contributionCount": 16
+        },
+        {
+         "date": "2026-03-04",
+         "contributionCount": 47
+        },
+        {
+         "date": "2026-03-05",
+         "contributionCount": 3
+        },
+        {
+         "date": "2026-03-06",
+         "contributionCount": 40
+        },
+        {
+         "date": "2026-03-07",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-03-08",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-03-09",
+         "contributionCount": 2
+        },
+        {
+         "date": "2026-03-10",
+         "contributionCount": 3
+        },
+        {
+         "date": "2026-03-11",
+         "contributionCount": 97
+        },
+        {
+         "date": "2026-03-12",
+         "contributionCount": 12
+        },
+        {
+         "date": "2026-03-13",
+         "contributionCount": 7
+        },
+        {
+         "date": "2026-03-14",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-03-15",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-03-16",
+         "contributionCount": 8
+        },
+        {
+         "date": "2026-03-17",
+         "contributionCount": 21
+        },
+        {
+         "date": "2026-03-18",
+         "contributionCount": 12
+        },
+        {
+         "date": "2026-03-19",
+         "contributionCount": 9
+        },
+        {
+         "date": "2026-03-20",
+         "contributionCount": 74
+        },
+        {
+         "date": "2026-03-21",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-03-22",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-03-23",
+         "contributionCount": 37
+        },
+        {
+         "date": "2026-03-24",
+         "contributionCount": 3
+        },
+        {
+         "date": "2026-03-25",
+         "contributionCount": 66
+        },
+        {
+         "date": "2026-03-26",
+         "contributionCount": 20
+        },
+        {
+         "date": "2026-03-27",
+         "contributionCount": 2
+        },
+        {
+         "date": "2026-03-28",
+         "contributionCount": 2
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-03-29",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-03-30",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-03-31",
+         "contributionCount": 6
+        },
+        {
+         "date": "2026-04-01",
+         "contributionCount": 2
+        },
+        {
+         "date": "2026-04-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-03",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-04",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-04-05",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-06",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-07",
+         "contributionCount": 2
+        },
+        {
+         "date": "2026-04-08",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-09",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-10",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-11",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-04-12",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-13",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-14",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-15",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-16",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-17",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-18",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-04-19",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-20",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-21",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-22",
+         "contributionCount": 1
+        },
+        {
+         "date": "2026-04-23",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-24",
+         "contributionCount": 7
+        },
+        {
+         "date": "2026-04-25",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-04-26",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-27",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-29",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-04-30",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-01",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-02",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-05-03",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-04",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-05",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-06",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-07",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-08",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-09",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-05-10",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-11",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-12",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-13",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-14",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-15",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-16",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-05-17",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-18",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-19",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-20",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-21",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-22",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-23",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-05-24",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-25",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-26",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-27",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-29",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-05-30",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-05-31",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-01",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-03",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-04",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-05",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-06",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-06-07",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-08",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-09",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-10",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-11",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-12",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-13",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-06-14",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-15",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-16",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-17",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-18",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-19",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-20",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-06-21",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-22",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-23",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-24",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-25",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-26",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-27",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-06-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-29",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-06-30",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-01",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-03",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-04",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-07-05",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-06",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-07",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-08",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-09",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-10",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-11",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-07-12",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-13",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-14",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-15",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-16",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-17",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-18",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-07-19",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-20",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-21",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-22",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-23",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-24",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-25",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-07-26",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-27",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-29",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-30",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-07-31",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-01",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-08-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-03",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-04",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-05",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-06",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-07",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-08",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-08-09",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-10",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-11",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-12",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-13",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-14",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-15",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-08-16",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-17",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-18",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-19",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-20",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-21",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-22",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-08-23",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-24",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-25",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-26",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-27",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-29",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-08-30",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-08-31",
+         "contributionCount": 23
+        },
+        {
+         "date": "2026-09-01",
+         "contributionCount": 6
+        },
+        {
+         "date": "2026-09-02",
+         "contributionCount": 91
+        },
+        {
+         "date": "2026-09-03",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-09-04",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-09-05",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-09-06",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-09-07",
+         "contributionCount": 6
+        },
+        {
+         "date": "2026-09-08",
+         "contributionCount": 40
+        },
+        {
+         "date": "2026-09-09",
+         "contributionCount": 68
+        },
+        {
+         "date": "2026-09-10",
+         "contributionCount": 28
+        },
+        {
+         "date": "2026-09-11",
+         "contributionCount": 20
+        },
+        {
+         "date": "2026-09-12",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-09-13",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-09-14",
+         "contributionCount": 4
+        },
+        {
+         "date": "2026-09-15",
+         "contributionCount": 15
+        },
+        {
+         "date": "2026-09-16",
+         "contributionCount": 14
+        },
+        {
+         "date": "2026-09-17",
+         "contributionCount": 18
+        },
+        {
+         "date": "2026-09-18",
+         "contributionCount": 8
+        },
+        {
+         "date": "2026-09-19",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-09-20",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-09-21",
+         "contributionCount": 6
+        },
+        {
+         "date": "2026-09-22",
+         "contributionCount": 36
+        },
+        {
+         "date": "2026-09-23",
+         "contributionCount": 94
+        },
+        {
+         "date": "2026-09-24",
+         "contributionCount": 58
+        },
+        {
+         "date": "2026-09-25",
+         "contributionCount": 83
+        },
+        {
+         "date": "2026-09-26",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-09-27",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-09-28",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-09-29",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-09-30",
+         "contributionCount": 50
+        },
+        {
+         "date": "2026-10-01",
+         "contributionCount": 3
+        },
+        {
+         "date": "2026-10-02",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-10-03",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-10-04",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-10-05",
+         "contributionCount": 7
+        },
+        {
+         "date": "2026-10-06",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-10-07",
+         "contributionCount": 30
+        },
+        {
+         "date": "2026-10-08",
+         "contributionCount": 98
+        },
+        {
+         "date": "2026-10-09",
+         "contributionCount": 30
+        },
+        {
+         "date": "2026-10-10",
+         "contributionCount": 0
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-10-11",
+         "contributionCount": 0
+        },
+        {
+         "date": "2026-10-12",
+         "contributionCount": 7
+        },
+        {
+         "date": "2026-10-13",
+         "contributionCount": 104
+        },
+        {
+         "date": "2026-10-14",
+         "contributionCount": 58
+        },
+        {
+         "date": "2026-10-15",
+         "contributionCount": 29
+        },
+        {
+         "date": "2026-10-16",
+         "contributionCount": 32
+        },
+        {
+         "date": "2026-10-17",
+         "contributionCount": 2
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-10-18",
+         "contributionCount": 2
+        },
+        {
+         "date": "2026-10-19",
+         "contributionCount": 17
+        },
+        {
+         "date": "2026-10-20",
+         "contributionCount": 40
+        },
+        {
+         "date": "2026-10-21",
+         "contributionCount": 80
+        },
+        {
+         "date": "2026-10-22",
+         "contributionCount": 99
+        },
+        {
+         "date": "2026-10-23",
+         "contributionCount": 23
+        },
+        {
+         "date": "2026-10-24",
+         "contributionCount": 5
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-10-25",
+         "contributionCount": 5
+        },
+        {
+         "date": "2026-10-26",
+         "contributionCount": 4
+        },
+        {
+         "date": "2026-10-27",
+         "contributionCount": 9
+        },
+        {
+         "date": "2026-10-28",
+         "contributionCount": 11
+        },
+        {
+         "date": "2026-10-29",
+         "contributionCount": 5
+        },
+        {
+         "date": "2026-10-30",
+         "contributionCount": 61
+        },
+        {
+         "date": "2026-10-31",
+         "contributionCount": 10
+        }
+       ]
+      },
+      {
+       "contributionDays": [
+        {
+         "date": "2026-11-01",
+         "contributionCount": 2
+        },
+        {
+         "date": "2026-11-02",
+         "contributionCount": 24
+        }
+       ]
+      }
+     ]
+    }
+   }
+  }
+ }
+}
