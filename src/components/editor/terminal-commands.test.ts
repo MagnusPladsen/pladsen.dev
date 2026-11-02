@@ -56,4 +56,20 @@ describe('runTerminalCommand', () => {
   it('should print nothing for blank input', () => {
     expect(runTerminalCommand('   ', context).lines).toEqual([]);
   });
+
+  it.each([
+    ['sudo ping magnus', 'sudo'],
+    ['rm -rf /', 'rm-rf'],
+    ['vim', 'vim'],
+    ['cat .env', 'cat-env'],
+    ['theme crt', 'crt'],
+    ['run', 'run'],
+    ['ls easter-eggs', 'egg-hunt'],
+  ])('should mark %s as the %s easter egg', (input, egg) => {
+    expect(runTerminalCommand(input, context).egg).toBe(egg);
+  });
+
+  it('should answer an easter egg hunt instead of command not found', () => {
+    expect(text('find . -name "*egg*"')).not.toContain('command not found');
+  });
 });

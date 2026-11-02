@@ -1,8 +1,12 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
+import { Egg } from 'lucide-react';
 import { useSiteContent } from '@/components/site/SiteContentProvider.component';
 import type { GitHubSnapshot } from '@/lib/github/types';
+import { DEFAULT_CONTENT } from '@/lib/site-content';
+import { DEFAULT_ACCENT } from '@/lib/themes';
+import { EASTER_EGG_COUNT, EASTER_EGGS } from './easter-eggs';
 import { EDITOR_TABS, EditorStateProvider, useEditorState, type EditorTab } from './EditorState.component';
 import { LivePreview } from './LivePreview.component';
 import { Minimap } from './Minimap.component';
@@ -81,6 +85,44 @@ function Sidebar({ snapshot, now }: EditorProps): ReactNode {
   );
 }
 
+function useSiteEasterEggs(): void {
+  const { content, theme, accent } = useSiteContent();
+  const { tab, findEgg } = useEditorState();
+  useEffect(() => {
+    if (tab === '.env') findEgg('env-tab');
+  }, [tab, findEgg]);
+  useEffect(() => {
+    if (theme === 'CRT') findEgg('crt');
+  }, [theme, findEgg]);
+  useEffect(() => {
+    if (accent !== DEFAULT_ACCENT) findEgg('accent');
+  }, [accent, findEgg]);
+  useEffect(() => {
+    if (content !== DEFAULT_CONTENT) findEgg('live-edit');
+  }, [content, findEgg]);
+}
+
+function EasterEggCounter(): ReactNode {
+  const { foundEggs, print, setPanel } = useEditorState();
+  if (foundEggs.length === 0) return null;
+  const showFound = () => {
+    setPanel('terminal');
+    print([{ text: `🥚 ${foundEggs.length}/${EASTER_EGG_COUNT} found: ${foundEggs.map((egg) => EASTER_EGGS[egg]).join(', ')}`, tone: 'success' }]);
+  };
+  return (
+    <button
+      type="button"
+      className="inline-flex items-center gap-1 hover:underline focus-visible:underline"
+      aria-label={`Easter eggs found: ${foundEggs.length} of ${EASTER_EGG_COUNT}`}
+      title="Easter eggs found"
+      onClick={showFound}
+    >
+      <Egg aria-hidden="true" className="h-3 w-3" />
+      {foundEggs.length}/{EASTER_EGG_COUNT}
+    </button>
+  );
+}
+
 function StatusBar(): ReactNode {
   const { theme, cycleTheme } = useSiteContent();
   const { tab, setTab, setPanel } = useEditorState();
@@ -93,6 +135,7 @@ function StatusBar(): ReactNode {
       <button type="button" className={buttonClass} title="Show problems" onClick={() => setPanel('problems')}>
         ✓ 0 ⚠ 1
       </button>
+      <EasterEggCounter />
       <span className="grow" />
       <span className="hidden sm:inline">{TAB_LANGUAGES[tab]}</span>
       <span className="hidden sm:inline">UTF-8</span>
@@ -115,6 +158,7 @@ function RunButton(): ReactNode {
 
 function EditorWindow({ snapshot, now }: EditorProps): ReactNode {
   const { tab, isPreviewOpen } = useEditorState();
+  useSiteEasterEggs();
   const isPreviewVisible = isPreviewOpen && tab === 'page.tsx';
   return (
     <section aria-label="Code editor" className="tile overflow-clip rounded-[14px] shadow-[0_40px_120px_-40px_rgb(0_0_0/0.9)]" style={{ animationDelay: '1.1s' }}>

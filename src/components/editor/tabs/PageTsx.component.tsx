@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import { useSiteContent, type FieldPath } from '@/components/site/SiteContentProvider.component';
 import { FEATURED_APPS, type SiteContent } from '@/lib/site-content';
 import { CodeLine, EditableString, Fn, Keyword, Comment } from '../CodeLine.component';
+import { useEditorState } from '../EditorState.component';
 
 type GroupName = 'developer' | 'ctas' | 'copy';
 
@@ -17,8 +18,9 @@ function GroupLines({ group, content, setField }: { group: GroupName; content: S
 }
 
 function DeveloperHint({ name, role }: { name: string; role: string }): ReactNode {
+  const { findEgg } = useEditorState();
   return (
-    <span className="group relative cursor-help border-b border-dotted border-site-faint text-site-fn">
+    <span onMouseEnter={() => findEgg('type-hint')} className="group relative cursor-help border-b border-dotted border-site-faint text-site-fn">
       developer
       <span role="tooltip" className="absolute left-0 top-6 z-10 hidden whitespace-pre rounded-lg border border-site-tile-border bg-site-pop px-3 py-2.5 text-xs leading-relaxed text-site-text2 shadow-2xl group-hover:block">
         <Keyword>const</Keyword> <Fn>developer</Fn>: {'{'}

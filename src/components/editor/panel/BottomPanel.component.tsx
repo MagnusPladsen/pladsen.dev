@@ -25,7 +25,7 @@ const TECH_NAMES = techData.flatMap((group) => group.techs.map((tech) => tech.na
 
 function Terminal({ snapshot }: { snapshot: GitHubSnapshot }): ReactNode {
   const { content, setTheme } = useSiteContent();
-  const { terminalLines, print, clearTerminal, startRun } = useEditorState();
+  const { terminalLines, print, clearTerminal, startRun, findEgg } = useEditorState();
   const [command, setCommand] = useState('');
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -35,6 +35,7 @@ function Terminal({ snapshot }: { snapshot: GitHubSnapshot }): ReactNode {
     if (!command.trim()) return;
     if (result.effect?.kind === 'clear') return clearTerminal();
     print([{ text: `$ ${command.trim()}`, tone: 'plain' }, ...result.lines]);
+    if (result.egg) findEgg(result.egg);
     if (result.effect?.kind === 'run') startRun();
     if (result.effect?.kind === 'theme') setTheme(result.effect.theme);
   };
