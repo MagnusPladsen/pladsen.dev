@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react';
 import { DEFAULT_CONTENT, type SiteContent } from '@/lib/site-content';
-import { DEFAULT_ACCENT, THEME_NAMES, THEMES, getNextTheme, isValidAccent, type ThemeName } from '@/lib/themes';
+import { DEFAULT_ACCENT, THEMES, getNextTheme, isValidAccent, type ThemeName } from '@/lib/themes';
 
 const SETTINGS_KEY = 'pladsen.settings';
 
@@ -31,7 +31,7 @@ function readSettings(): { theme?: ThemeName; accent?: string } {
     if (typeof parsed !== 'object' || parsed === null) return {};
     const { theme, accent } = parsed as Record<string, unknown>;
     return {
-      theme: THEME_NAMES.includes(theme as ThemeName) ? (theme as ThemeName) : undefined,
+      theme: typeof theme === 'string' && theme in THEMES ? (theme as ThemeName) : undefined,
       accent: typeof accent === 'string' && isValidAccent(accent) ? accent : undefined,
     };
   } catch {

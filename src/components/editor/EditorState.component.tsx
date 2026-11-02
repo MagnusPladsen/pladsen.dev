@@ -26,6 +26,8 @@ interface EditorStateValue {
   print: (lines: TerminalLine[]) => void;
   clearTerminal: () => void;
   startRun: () => void;
+  isMatrixOn: boolean;
+  startMatrix: () => void;
   foundEggs: EasterEggId[];
   findEgg: (egg: EasterEggId) => void;
 }
@@ -33,6 +35,7 @@ interface EditorStateValue {
 const MAX_TERMINAL_LINES = 40;
 const COMPILE_DELAY_MS = 700;
 const PREVIEW_DELAY_MS = 900;
+const MATRIX_DURATION_MS = 5000;
 const INITIAL_TERMINAL: TerminalLine[] = [
   { text: '$ bun run dev', tone: 'muted' },
   { text: '✓ Ready in 312ms', tone: 'success' },
@@ -67,6 +70,7 @@ export function EditorStateProvider({ children }: { children: ReactNode }): Reac
   const [panel, setPanel] = useState<PanelTab>('terminal');
   const [selectedRepo, setSelectedRepo] = useState<string | null>(null);
   const [isPreviewOpen, setPreviewOpen] = useState(false);
+  const [isMatrixOn, setMatrixOn] = useState(false);
   const [terminalLines, setTerminalLines] = useState<TerminalLine[]>(INITIAL_TERMINAL);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const [foundEggs, setFoundEggs] = useState<EasterEggId[]>([]);
@@ -107,12 +111,17 @@ export function EditorStateProvider({ children }: { children: ReactNode }): Reac
     );
   }, [print, findEgg]);
 
+  const startMatrix = useCallback(() => {
+    setMatrixOn(true);
+    timers.current.push(setTimeout(() => setMatrixOn(false), MATRIX_DURATION_MS));
+  }, []);
+
   const value = useMemo(
     () => ({
       tab, setTab, view, setView, isMobileSidebarOpen, setMobileSidebarOpen, panel, setPanel, selectedRepo, setSelectedRepo, isPreviewOpen, setPreviewOpen,
-      terminalLines, print, clearTerminal: () => setTerminalLines([]), startRun, foundEggs, findEgg,
+      terminalLines, print, clearTerminal: () => setTerminalLines([]), startRun, isMatrixOn, startMatrix, foundEggs, findEgg,
     }),
-    [tab, view, isMobileSidebarOpen, panel, selectedRepo, isPreviewOpen, terminalLines, print, startRun, foundEggs, findEgg],
+    [tab, view, isMobileSidebarOpen, panel, selectedRepo, isPreviewOpen, terminalLines, print, startRun, isMatrixOn, startMatrix, foundEggs, findEgg],
   );
   return <EditorStateContext.Provider value={value}>{children}</EditorStateContext.Provider>;
 }

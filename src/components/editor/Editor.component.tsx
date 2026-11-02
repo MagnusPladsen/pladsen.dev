@@ -5,10 +5,11 @@ import { Egg } from 'lucide-react';
 import { useSiteContent } from '@/components/site/SiteContentProvider.component';
 import type { GitHubSnapshot } from '@/lib/github/types';
 import { DEFAULT_CONTENT } from '@/lib/site-content';
-import { DEFAULT_ACCENT } from '@/lib/themes';
+import { DEFAULT_ACCENT, HIDDEN_THEME } from '@/lib/themes';
 import { EASTER_EGG_COUNT, EASTER_EGGS } from './easter-eggs';
 import { EDITOR_TABS, EditorStateProvider, useEditorState, type EditorTab } from './EditorState.component';
 import { LivePreview } from './LivePreview.component';
+import { MatrixRain } from './MatrixRain.component';
 import { Minimap } from './Minimap.component';
 import { BottomPanel } from './panel/BottomPanel.component';
 import { ReleaseToast } from './ReleaseToast.component';
@@ -22,6 +23,7 @@ import { EnvFile } from './tabs/EnvFile.component';
 import { JourneyMd } from './tabs/JourneyMd.component';
 import { PageTsx } from './tabs/PageTsx.component';
 import { SettingsJson } from './tabs/SettingsJson.component';
+import { useKonamiCode } from './useKonamiCode';
 
 const TAB_LANGUAGES: Record<EditorTab, string> = {
   'page.tsx': 'TypeScript React',
@@ -86,8 +88,13 @@ function Sidebar({ snapshot, now }: EditorProps): ReactNode {
 }
 
 function useSiteEasterEggs(): void {
-  const { content, theme, accent } = useSiteContent();
-  const { tab, findEgg } = useEditorState();
+  const { content, theme, setTheme, accent } = useSiteContent();
+  const { tab, findEgg, print } = useEditorState();
+  useKonamiCode(() => {
+    setTheme(HIDDEN_THEME);
+    print([{ text: '↑↑↓↓←→←→BA · +30 lives · Synthwave theme unlocked', tone: 'success' }]);
+    findEgg('konami');
+  });
   useEffect(() => {
     if (tab === '.env') findEgg('env-tab');
   }, [tab, findEgg]);
@@ -157,7 +164,7 @@ function RunButton(): ReactNode {
 }
 
 function EditorWindow({ snapshot, now }: EditorProps): ReactNode {
-  const { tab, isPreviewOpen } = useEditorState();
+  const { tab, isPreviewOpen, isMatrixOn } = useEditorState();
   useSiteEasterEggs();
   const isPreviewVisible = isPreviewOpen && tab === 'page.tsx';
   return (
@@ -188,6 +195,7 @@ function EditorWindow({ snapshot, now }: EditorProps): ReactNode {
           <div className="flex h-[380px] min-h-0">
             <div className="relative min-w-0 grow overflow-auto pb-6 pt-1">
               <TabContent snapshot={snapshot} now={now} />
+              {isMatrixOn && <MatrixRain />}
             </div>
             {isPreviewVisible && <LivePreview />}
             <Minimap />

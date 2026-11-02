@@ -100,3 +100,34 @@ describe('Easter egg counter', () => {
     expect(screen.getByRole('button', { name: /Easter eggs found: 1 of/ })).toBeInTheDocument();
   });
 });
+
+describe('Terminal history', () => {
+  it('should recall the previous command with the up arrow', async () => {
+    const user = renderEditor();
+    const input = screen.getByRole('textbox', { name: 'Terminal command' });
+    await user.type(input, 'whoami{Enter}');
+    await user.type(input, '{ArrowUp}');
+    expect(input).toHaveValue('whoami');
+  });
+});
+
+describe('Matrix', () => {
+  it('should rain over the editor and then stop', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    const user = renderEditor(makeSnapshot(), true);
+    await user.type(screen.getByRole('textbox', { name: 'Terminal command' }), 'matrix{Enter}');
+    expect(screen.getByTestId('matrix-rain')).toBeInTheDocument();
+    await act(async () => {
+      vi.advanceTimersByTime(6000);
+    });
+    expect(screen.queryByTestId('matrix-rain')).not.toBeInTheDocument();
+  });
+});
+
+describe('Konami code', () => {
+  it('should unlock the Synthwave theme', async () => {
+    const user = renderEditor();
+    await user.keyboard('{ArrowUp}{ArrowUp}{ArrowDown}{ArrowDown}{ArrowLeft}{ArrowRight}{ArrowLeft}{ArrowRight}ba');
+    expect(screen.getByRole('button', { name: 'Switch theme (current: Synthwave)' })).toBeInTheDocument();
+  });
+});

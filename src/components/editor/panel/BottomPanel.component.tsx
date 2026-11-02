@@ -25,19 +25,30 @@ const TECH_NAMES = techData.flatMap((group) => group.techs.map((tech) => tech.na
 
 function Terminal({ snapshot }: { snapshot: GitHubSnapshot }): ReactNode {
   const { content, setTheme } = useSiteContent();
-  const { terminalLines, print, clearTerminal, startRun, findEgg } = useEditorState();
+  const { terminalLines, print, clearTerminal, startRun, startMatrix, findEgg } = useEditorState();
   const [command, setCommand] = useState('');
+  const [history, setHistory] = useState<string[]>([]);
+
+  const runCommand = () => {
+    const trimmed = command.trim();
+    const result = runTerminalCommand(trimmed, { content, snapshot, techNames: TECH_NAMES, history });
+    setCommand('');
+    if (!trimmed) return;
+    setHistory((current) => [...current, trimmed]);
+    if (result.egg) findEgg(result.egg);
+    if (result.effect?.kind === 'clear') return clearTerminal();
+    print([{ text: `$ ${trimmed}`, tone: 'plain' }, ...result.lines]);
+    if (result.effect?.kind === 'run') startRun();
+    if (result.effect?.kind === 'matrix') startMatrix();
+    if (result.effect?.kind === 'theme') setTheme(result.effect.theme);
+  };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key !== 'Enter') return;
-    const result = runTerminalCommand(command, { content, snapshot, techNames: TECH_NAMES });
-    setCommand('');
-    if (!command.trim()) return;
-    if (result.effect?.kind === 'clear') return clearTerminal();
-    print([{ text: `$ ${command.trim()}`, tone: 'plain' }, ...result.lines]);
-    if (result.egg) findEgg(result.egg);
-    if (result.effect?.kind === 'run') startRun();
-    if (result.effect?.kind === 'theme') setTheme(result.effect.theme);
+    if (event.key === 'Enter') runCommand();
+    if (event.key === 'ArrowUp' && history.length > 0) {
+      event.preventDefault();
+      setCommand(history[history.length - 1]);
+    }
   };
 
   return (

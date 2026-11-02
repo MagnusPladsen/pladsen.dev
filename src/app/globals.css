@@ -149,6 +149,7 @@
 @keyframes ghost { 0% { width: 0; opacity: 0.6; } 45% { width: 44ch; opacity: 0.6; } 80% { width: 44ch; opacity: 0.6; } 100% { width: 44ch; opacity: 0; } }
 @keyframes wander { 0% { left: 120px; top: 58px; } 20% { left: 340px; top: 94px; } 40% { left: 260px; top: 166px; } 60% { left: 470px; top: 130px; } 80% { left: 190px; top: 238px; } 100% { left: 120px; top: 58px; } }
 @keyframes viewport { 0%, 100% { top: 0; } 50% { top: 46%; } }
+@keyframes matrix-fall { from { transform: translateY(-100%); } to { transform: translateY(110%); } }
 @keyframes toast-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {

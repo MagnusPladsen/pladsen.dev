@@ -10,6 +10,21 @@ export const EASTER_EGGS = {
   accent: 'custom accent colour',
   'type-hint': 'peeked at the developer type',
   'egg-hunt': 'hunted for easter eggs',
+  help: 'asked for help',
+  exit: 'tried to exit',
+  'vim-escape': 'escaped vim',
+  hire: 'hired Magnus',
+  coffee: 'brewed coffee',
+  blame: 'git blame',
+  fortune: 'read a fortune',
+  cowsay: 'made the cow talk',
+  neofetch: 'neofetch',
+  matrix: 'entered the matrix',
+  'bun-house': 'reached for npm',
+  ping: 'pinged the world',
+  history: 'checked history',
+  sandwich: 'sudo make sandwich',
+  konami: 'Konami code',
 } as const;
 
 export type EasterEggId = keyof typeof EASTER_EGGS;
