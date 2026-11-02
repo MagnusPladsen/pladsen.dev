@@ -5,6 +5,12 @@ import { useSiteContent } from '@/components/site/SiteContentProvider.component'
 import type { GitHubSnapshot } from '@/lib/github/types';
 import { EDITOR_TABS, EditorStateProvider, useEditorState, type EditorTab } from './EditorState.component';
 import { Minimap } from './Minimap.component';
+import { ActivityBar } from './sidebar/ActivityBar.component';
+import { Explorer } from './sidebar/Explorer.component';
+import { EXTENSION_COUNT, Extensions } from './sidebar/Extensions.component';
+import { SearchPanel } from './sidebar/SearchPanel.component';
+import { SourceControl } from './sidebar/SourceControl.component';
+import { GitGraph } from './tabs/GitGraph.component';
 import { EnvFile } from './tabs/EnvFile.component';
 import { JourneyMd } from './tabs/JourneyMd.component';
 import { PageTsx } from './tabs/PageTsx.component';
@@ -48,13 +54,25 @@ function TabBar(): ReactNode {
   );
 }
 
-function TabContent(): ReactNode {
+function TabContent({ snapshot, now }: EditorProps): ReactNode {
   const { tab } = useEditorState();
   if (tab === 'page.tsx') return <PageTsx />;
   if (tab === 'journey.md') return <JourneyMd />;
   if (tab === 'settings.json') return <SettingsJson />;
   if (tab === '.env') return <EnvFile />;
-  return null;
+  return <GitGraph snapshot={snapshot} now={now} />;
+}
+
+function Sidebar({ snapshot, now }: EditorProps): ReactNode {
+  const { view } = useEditorState();
+  return (
+    <aside aria-label="Sidebar" className="hidden h-[560px] w-[260px] shrink-0 overflow-y-auto border-r border-site-line bg-site-panel py-3 md:block">
+      {view === 'explorer' && <Explorer />}
+      {view === 'search' && <SearchPanel repos={snapshot.repos} />}
+      {view === 'scm' && <SourceControl recent={snapshot.recent} now={now} />}
+      {view === 'extensions' && <Extensions />}
+    </aside>
+  );
 }
 
 function StatusBar(): ReactNode {
@@ -89,8 +107,10 @@ function EditorWindow({ snapshot, now }: EditorProps): ReactNode {
         <span className="h-[11px] w-[11px] rounded-full bg-site-mac-green" />
         <span className="grow text-center font-mono text-xs text-site-dim">pladsen.dev — {tab}</span>
       </div>
-      <div className="flex min-w-0">
-        <div className="flex min-w-0 grow flex-col" data-snapshot-source={snapshot.source} data-now={now}>
+      <div className="flex min-w-0 flex-col md:flex-row">
+        <ActivityBar extensionCount={EXTENSION_COUNT} />
+        <Sidebar snapshot={snapshot} now={now} />
+        <div className="flex min-w-0 grow flex-col">
           <div className="flex items-stretch border-b border-site-line bg-site-panel">
             <TabBar />
           </div>
@@ -105,7 +125,7 @@ function EditorWindow({ snapshot, now }: EditorProps): ReactNode {
           </div>
           <div className="flex h-[380px] min-h-0">
             <div className="relative min-w-0 grow overflow-auto pb-6 pt-1">
-              <TabContent />
+              <TabContent snapshot={snapshot} now={now} />
             </div>
             <Minimap />
           </div>
