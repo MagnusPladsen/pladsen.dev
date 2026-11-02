@@ -48,6 +48,7 @@ const HELP: TerminalLine[] = [
   line('  · the editor rewards the curious: hover, edit, open the dotfile', 'plain'),
   line("  · there's always someone to blame, and always someone hungry", 'plain'),
   line('  · old gamers still know the code', 'plain'),
+  line('  · this site was pair-programmed with an AI. it left traces, and slash commands', 'plain'),
 ];
 
 const FORTUNES = [
@@ -118,6 +119,24 @@ function getHire(): TerminalLine[] {
   ];
 }
 
+const CLAUDE_WELCOME: TerminalLine[] = [
+  line('╭──────────────────────────────────────────╮', 'plain'),
+  line('│ ✻ Welcome to Claude Code!                │', 'success'),
+  line('│                                          │', 'plain'),
+  line('│   /help for help, /cost for the bill     │', 'plain'),
+  line('│   cwd: ~/pladsen.dev                     │', 'plain'),
+  line('╰──────────────────────────────────────────╯', 'plain'),
+  line('> build me a portfolio with too many easter eggs'),
+  line('⏺ On it. Adding easter egg #31…', 'success'),
+];
+
+const SLASH_COMMANDS: Record<string, TerminalLine[]> = {
+  '/init': [line('Analyzing codebase…'), line('✓ created CLAUDE.md: "# pladsen.dev: mostly easter eggs, some portfolio"', 'success')],
+  '/compact': [line('Compacting conversation…'), line('✓ Magnus, summarised: ships web apps, drinks coffee, hides eggs.', 'success')],
+  '/cost': [line('Total cost:      1 coffee', 'plain'), line('Total duration:  since 2022', 'plain'), line('Total code changes: yes', 'plain')],
+  '/help': [line('wrong terminal, but nice instinct. try plain help.', 'warning')],
+};
+
 function getHistory(history: string[]): TerminalLine[] {
   if (history.length === 0) return [line('no history yet. you are a blank slate.')];
   return history.map((command, index) => line(`${String(index + 1).padStart(4)}  ${command}`));
@@ -157,6 +176,15 @@ function getStaticOutput(command: string, context: TerminalContext): CommandOutp
     fortune: () => ({ lines: [line(FORTUNES[Math.floor(Math.random() * FORTUNES.length)], 'plain')], egg: 'fortune' }),
     neofetch: () => ({ lines: getNeofetch(context), egg: 'neofetch' }),
     history: () => ({ lines: getHistory(context.history), egg: 'history' }),
+    claude: () => ({ lines: CLAUDE_WELCOME, egg: 'claude' }),
+    'claude --dangerously-skip-permissions': () => ({
+      lines: [line('Nice try. Even Claude asks before touching prod.', 'warning'), line('Permission denied. Permission to deny: granted.', 'error')],
+      egg: 'yolo',
+    }),
+    ultrathink: () => ({
+      lines: [line('✻ Thinking…'), line('✻ Thinking harder…'), line('✻ Thinking really, really hard…'), line('⏺ Conclusion: hire Magnus.', 'success')],
+      egg: 'ultrathink',
+    }),
     'make sandwich': () => ({ lines: [line('What? Make it yourself.', 'error')] }),
     'sudo make sandwich': () => ({ lines: [line('Okay. 🥪', 'success')], egg: 'sandwich' }),
   };
@@ -167,6 +195,7 @@ const VIM_EXITS = [':q', ':q!', ':wq', ':x'];
 const OTHER_PACKAGE_MANAGERS = /^(npm|yarn|pnpm)(\s+(i|install|add)\b.*)?$/;
 
 function getPatternOutput(command: string): CommandOutput | undefined {
+  if (command in SLASH_COMMANDS) return { lines: SLASH_COMMANDS[command], egg: 'slash' };
   if (VIM_EXITS.includes(command)) return { lines: [line('Congratulations. You escaped vim. Few ever do.', 'success')], egg: 'vim-escape' };
   if (OTHER_PACKAGE_MANAGERS.test(command)) return { lines: [line('this house uses bun. ran `bun install` instead: done in 0.4s 🐇', 'warning')], egg: 'bun-house' };
   const cowsay = command.match(/^cowsay(?:\s+(.+))?$/);

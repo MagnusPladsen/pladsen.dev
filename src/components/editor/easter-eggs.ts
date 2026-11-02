@@ -25,6 +25,10 @@ export const EASTER_EGGS = {
   history: 'checked history',
   sandwich: 'sudo make sandwich',
   konami: 'Konami code',
+  claude: 'launched Claude Code',
+  yolo: 'tried to skip permissions',
+  slash: 'used a slash command',
+  ultrathink: 'ultrathought',
 } as const;
 
 export type EasterEggId = keyof typeof EASTER_EGGS;

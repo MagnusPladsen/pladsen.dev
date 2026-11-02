@@ -90,6 +90,12 @@ describe('runTerminalCommand', () => {
     ['ping google.com', 'ping'],
     ['history', 'history'],
     ['sudo make sandwich', 'sandwich'],
+    ['claude', 'claude'],
+    ['claude --dangerously-skip-permissions', 'yolo'],
+    ['/init', 'slash'],
+    ['/compact', 'slash'],
+    ['/cost', 'slash'],
+    ['ultrathink', 'ultrathink'],
   ])('should mark %s as the %s easter egg', (input, egg) => {
     expect(runTerminalCommand(input, context).egg).toBe(egg);
   });
@@ -131,5 +137,13 @@ describe('runTerminalCommand', () => {
 
   it('should joke about other package managers', () => {
     expect(text('npm install')).toContain('bun');
+  });
+
+  it('should open a Claude Code welcome box for claude', () => {
+    expect(text('claude')).toContain('Welcome to Claude Code');
+  });
+
+  it('should hint at the Claude Code eggs in help', () => {
+    expect(text('help')).toMatch(/AI/);
   });
 });
