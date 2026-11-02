@@ -92,6 +92,7 @@ describe('runTerminalCommand', () => {
     ['sudo make sandwich', 'sandwich'],
     ['claude', 'claude'],
     ['claude --dangerously-skip-permissions', 'yolo'],
+    ['claude-code', 'claude-code'],
     ['/init', 'slash'],
     ['/compact', 'slash'],
     ['/cost', 'slash'],
@@ -147,6 +148,10 @@ describe('runTerminalCommand', () => {
 
   it('should open a Claude Code welcome box for claude', () => {
     expect(text('claude')).toContain('Welcome to Claude Code');
+  });
+
+  it('should point claude-code to the real command', () => {
+    expect(text('claude-code')).toContain('Did you mean: claude');
   });
 
   it('should hint at the Claude Code eggs in help', () => {
