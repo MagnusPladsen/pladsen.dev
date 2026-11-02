@@ -13,7 +13,7 @@ export default async function ReposPage(): Promise<ReactNode> {
   const now = new Date().toISOString();
   return (
     <SiteShell now={now} repos={snapshot.repos}>
-      <RepoBrowser repos={snapshot.repos} now={now} />
+      <RepoBrowser repos={snapshot.repos} />
     </SiteShell>
   );
 }
