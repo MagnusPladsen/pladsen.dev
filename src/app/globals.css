@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 @layer base {
   :root {
@@ -69,4 +66,91 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  .site-root {
+    @apply relative min-h-screen overflow-x-clip bg-site-bg text-site-fg transition-colors duration-300;
+    font-family: var(--theme-font);
+  }
+  .tile {
+    @apply relative rounded-[18px] border border-site-tile-border bg-site-tile backdrop-blur-[14px] transition duration-200;
+    animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  }
+  a.tile:hover {
+    @apply -translate-y-[3px];
+    border-color: color-mix(in srgb, var(--site-accent) 50%, transparent);
+  }
+  .rise {
+    animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  }
+  .shine {
+    background: linear-gradient(100deg, var(--fg) 35%, var(--site-accent) 50%, var(--fg) 65%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 7s linear infinite;
+  }
+  .typed {
+    @apply inline-block w-0 overflow-hidden whitespace-nowrap align-bottom;
+    animation: type 1.4s steps(23) 0.2s forwards;
+  }
+  .caret {
+    @apply inline-block h-[1em] w-2 bg-site-accent align-text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+  .live-dot {
+    @apply inline-block h-1.5 w-1.5 rounded-full bg-site-ok;
+    animation: pulse-soft 1.8s ease infinite;
+  }
+  .section-label {
+    @apply m-0 font-mono text-[13px] font-normal text-site-dim;
+  }
+  .method-badge {
+    @apply rounded bg-site-ok/15 px-1.5 py-0.5 text-[10px] font-medium text-site-ok;
+  }
+  .code {
+    counter-reset: line;
+    @apply font-mono text-sm leading-[1.8];
+  }
+  .code-line {
+    @apply flex gap-5 whitespace-pre px-5 opacity-0 hover:bg-site-hover;
+    animation: line-in 0.3s ease forwards;
+  }
+  .code-line::before {
+    counter-increment: line;
+    content: counter(line);
+    @apply min-w-6 shrink-0 text-right text-site-faint;
+  }
+  .code-input {
+    @apply max-w-[48ch] border-0 border-b border-dashed border-transparent bg-transparent p-0 text-site-str outline-none hover:border-site-faint focus:border-site-accent focus:bg-site-hover;
+    font: inherit;
+  }
+  .crt-scanlines {
+    @apply pointer-events-none fixed inset-0 z-50;
+    background: repeating-linear-gradient(0deg, rgb(0 0 0 / 0.35) 0 1px, transparent 1px 3px);
+  }
+}
+
+@keyframes drift1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(140px, 90px) scale(1.15); } }
+@keyframes drift2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-160px, 70px); } }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes type { from { width: 0; } to { width: 23ch; } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@keyframes line-in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+@keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@keyframes slide { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: none; } }
+@keyframes sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes ripple { 0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0.9; } 100% { transform: translate(-50%, -50%) scale(2.6); opacity: 0; } }
+@keyframes ghost { 0% { width: 0; opacity: 0.6; } 45% { width: 44ch; opacity: 0.6; } 80% { width: 44ch; opacity: 0.6; } 100% { width: 44ch; opacity: 0; } }
+@keyframes wander { 0% { left: 120px; top: 58px; } 20% { left: 340px; top: 94px; } 40% { left: 260px; top: 166px; } 60% { left: 470px; top: 130px; } 80% { left: 190px; top: 238px; } 100% { left: 120px; top: 58px; } }
+@keyframes viewport { 0%, 100% { top: 0; } 50% { top: 46%; } }
+@keyframes toast-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }

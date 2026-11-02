@@ -1,5 +1,6 @@
 interface Tech {
   name: string;
+  blurb?: string;
   icon?: string;
   bgColor?: string;
   link: string;
