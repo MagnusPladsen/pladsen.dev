@@ -75,12 +75,13 @@ function toCommit(commit: RestCommit): Commit {
 
 async function fetchWithRest(fetchedAt: Date): Promise<GitHubSnapshot> {
   const repos = (await getJson<RestRepo[]>(`${API_URL}/users/${GITHUB_LOGIN}/repos?per_page=100&sort=pushed`)).map(toRepo);
-  const recent: RecentRepo[] = await Promise.all(
+  const withCommits: RecentRepo[] = await Promise.all(
     repos.slice(0, RECENT_REPO_COUNT).map(async (repo) => {
-      const commits = await getJson<RestCommit[]>(`${API_URL}/repos/${GITHUB_LOGIN}/${repo.name}/commits?per_page=6`);
+      const commits = await getJson<RestCommit[]>(`${API_URL}/repos/${GITHUB_LOGIN}/${repo.name}/commits?per_page=6`).catch(() => []);
       return { ...repo, commits: commits.map(toCommit) };
     }),
   );
+  const recent = withCommits.filter((repo) => repo.commits.length > 0);
   return {
     fetchedAt: fetchedAt.toISOString(),
     source: 'rest',

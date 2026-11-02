@@ -1,5 +1,3 @@
-import { existsSync } from 'node:fs';
-import path from 'node:path';
 import type { ReactNode } from 'react';
 import { Editor } from '@/components/editor/Editor.component';
 import { FeaturedApps } from '@/components/home/FeaturedApps.component';
@@ -10,6 +8,7 @@ import { LatestPushes } from '@/components/home/LatestPushes.component';
 import { Backdrop } from '@/components/site/Backdrop.component';
 import { Nav } from '@/components/site/Nav.component';
 import { SiteContentProvider } from '@/components/site/SiteContentProvider.component';
+import { isCvAvailable } from '@/lib/cv';
 import { fetchGitHubSnapshot } from '@/lib/github/fetch-snapshot';
 
 export const revalidate = 3600;
@@ -17,14 +16,13 @@ export const revalidate = 3600;
 export default async function Home(): Promise<ReactNode> {
   const snapshot = await fetchGitHubSnapshot();
   const now = new Date().toISOString();
-  const isCvAvailable = existsSync(path.join(process.cwd(), 'public', 'cv.pdf'));
 
   return (
     <SiteContentProvider>
       <Backdrop />
       <div className="relative mx-auto w-full max-w-[1180px] px-4 pt-5 sm:px-6">
         <Nav />
-        <Hero isCvAvailable={isCvAvailable} />
+        <Hero isCvAvailable={isCvAvailable()} />
         <Editor snapshot={snapshot} now={now} />
         <FeaturedApps />
         <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-3">

@@ -64,6 +64,25 @@ describe('fetchGitHubSnapshot', () => {
     expect(snapshot.totals).toEqual({ publicRepos: 8, originals: 7, forks: 1 });
   });
 
+  it('skips an empty repo instead of failing the whole REST snapshot', async () => {
+    vi.stubEnv('GITHUB_TOKEN', '');
+    const repos = Array.from({ length: 8 }, (_, i) => restRepo(`repo-${i}`, `2026-11-0${9 - i}T00:00:00Z`));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((url: string) => {
+        if (url.includes('/users/MagnusPladsen/repos')) return Promise.resolve(jsonResponse(repos));
+        if (url.includes('/repo-0/commits')) return Promise.resolve(jsonResponse({ message: 'Git Repository is empty.' }, 409));
+        return Promise.resolve(jsonResponse([restCommit('abcdef1234567', 'feat: hello')]));
+      }),
+    );
+
+    const snapshot = await fetchGitHubSnapshot();
+
+    expect(snapshot.source).toBe('rest');
+    expect(snapshot.recent.map((repo) => repo.name)).not.toContain('repo-0');
+    expect(snapshot.recent).toHaveLength(5);
+  });
+
   it.each([
     ['rejects', () => Promise.reject(new Error('offline'))],
     ['returns 502', () => Promise.resolve(new Response('bad gateway', { status: 502 }))],
