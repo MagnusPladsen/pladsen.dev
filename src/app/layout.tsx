@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Magnus Pladsen',
-  description: 'Portfolio',
+  description: 'Magnus Pladsen — full-stack developer building modern web apps with React, Next.js and .NET.',
 };
 
 export default function RootLayout({

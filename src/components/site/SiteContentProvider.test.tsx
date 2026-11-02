@@ -67,7 +67,7 @@ describe('SiteContentProvider', () => {
     const { container } = render(<SiteContentProvider>child</SiteContentProvider>);
     const root = container.firstElementChild as HTMLElement;
     expect(root.dataset.theme).toBe('Dark');
-    expect(root.style.getPropertyValue('--accent')).toBe('#f97316');
+    expect(root.style.getPropertyValue('--site-accent')).toBe('#f97316');
     expect(root.style.getPropertyValue('--bg')).toBe('#07080b');
   });
 });

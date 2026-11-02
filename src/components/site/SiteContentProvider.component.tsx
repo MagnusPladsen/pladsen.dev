@@ -58,7 +58,7 @@ export function applyField(content: SiteContent, path: FieldPath, value: string)
 
 function toThemeStyle(theme: ThemeName, accent: string): CSSProperties {
   const variables = Object.fromEntries(Object.entries(THEMES[theme]).map(([key, value]) => [`--${key}`, value]));
-  return { ...variables, '--accent': accent, colorScheme: THEMES[theme].scheme } as CSSProperties;
+  return { ...variables, '--site-accent': accent, colorScheme: THEMES[theme].scheme } as CSSProperties;
 }
 
 export function SiteContentProvider({ children }: { children: ReactNode }): ReactNode {
