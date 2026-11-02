@@ -24,8 +24,8 @@ describe('Hero', () => {
     renderInProvider(<Hero isCvAvailable />);
     expect(screen.getByRole('link', { name: /See my apps/ })).toHaveAttribute('href', '/apps');
     const cv = screen.getByRole('link', { name: /Download CV/ });
-    expect(cv).toHaveAttribute('href', '/cv.pdf');
-    expect(cv).toHaveAttribute('download', 'Magnus-Pladsen-CV.pdf');
+    expect(cv).toHaveAttribute('href', 'https://cv.pladsen.dev');
+    expect(cv).toHaveAttribute('target', '_blank');
     for (const social of contactInfo.socials) {
       expect(screen.getByRole('link', { name: new RegExp(social.application, 'i') })).toHaveAttribute('href', social.link);
     }

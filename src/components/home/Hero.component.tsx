@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { useSiteContent } from '@/components/site/SiteContentProvider.component';
 import contactInfo from '@/lib/contactInfo';
+import { CV_URL } from '@/lib/cv';
 
 const CTA_CLASS =
   'flex justify-between rounded-xl border border-site-tile-border px-4 py-3 text-site-fg transition-colors duration-150 hover:border-site-accent focus-visible:border-site-accent';
@@ -46,7 +47,7 @@ export function Hero({ isCvAvailable }: { isCvAvailable: boolean }): ReactNode {
           {ctas.primary} <span aria-hidden="true">→</span>
         </Link>
         {isCvAvailable && (
-          <a className={CTA_CLASS} href="/cv.pdf" download="Magnus-Pladsen-CV.pdf">
+          <a className={CTA_CLASS} href={CV_URL} target="_blank" rel="noreferrer">
             {ctas.cv} <span className="font-mono text-site-dim">.pdf</span>
           </a>
         )}
