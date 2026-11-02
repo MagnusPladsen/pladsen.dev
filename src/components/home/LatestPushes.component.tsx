@@ -1,8 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { useSiteContent } from '@/components/site/SiteContentProvider.component';
-import { COMMIT_TYPE_CLASSES, GITHUB_REPOS_URL } from '@/lib/commit-types';
+import { COMMIT_TYPE_CLASSES } from '@/lib/commit-types';
 import { formatRelative, getTimelinePosition } from '@/lib/github/transform';
 import type { Commit, GitHubSnapshot } from '@/lib/github/types';
 
@@ -97,10 +98,10 @@ export function LatestPushes({ snapshot, now }: { snapshot: GitHubSnapshot; now:
           })}
         </>
       )}
-      <a href={GITHUB_REPOS_URL} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm text-site-accent hover:underline">
+      <Link href="/repos" className="mt-3 inline-block text-sm text-site-accent hover:underline">
         {content.copy.browseRepos}
         {snapshot.totals.publicRepos > 0 && ` (${snapshot.totals.publicRepos})`} →
-      </a>
+      </Link>
     </section>
   );
 }

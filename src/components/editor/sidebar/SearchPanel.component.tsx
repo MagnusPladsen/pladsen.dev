@@ -1,15 +1,23 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { fuzzyMatch } from '@/lib/fuzzy';
 import type { Repo } from '@/lib/github/types';
+import { useEditorState } from '../EditorState.component';
+import { isEggHunt } from '../easter-eggs';
 import { PanelHeading, SIDEBAR_ROW } from './PanelHeading.component';
 
 const MAX_RESULTS = 14;
 
 export function SearchPanel({ repos }: { repos: Repo[] }): ReactNode {
   const [query, setQuery] = useState('');
+  const { findEgg } = useEditorState();
   const matches = repos.filter((repo) => fuzzyMatch(repo.name, query));
+  const isHunting = isEggHunt(query);
+
+  useEffect(() => {
+    if (isHunting) findEgg('egg-hunt');
+  }, [isHunting, findEgg]);
 
   return (
     <>
@@ -27,7 +35,9 @@ export function SearchPanel({ repos }: { repos: Repo[] }): ReactNode {
       <p className="px-3.5 pb-1.5 font-mono text-[11px] text-site-dim">
         {matches.length} of {repos.length} repos
       </p>
-      {matches.length === 0 ? (
+      {isHunting && matches.length === 0 ? (
+        <p className="px-3.5 font-mono text-xs text-site-ok">nice try. easter eggs aren&apos;t indexed, they&apos;re found.</p>
+      ) : matches.length === 0 ? (
         <p className="px-3.5 font-mono text-xs text-site-faint">no repo matches “{query}”</p>
       ) : (
         <ul aria-label="Search results">

@@ -16,7 +16,10 @@ function renderEditor(snapshot: GitHubSnapshot = makeSnapshot(), hasFakeTimers =
   return user;
 }
 
-afterEach(() => vi.useRealTimers());
+afterEach(() => {
+  vi.useRealTimers();
+  window.localStorage.clear();
+});
 
 describe('Terminal', () => {
   it('should run a command on Enter and clear the input', async () => {
@@ -65,5 +68,66 @@ describe('Release toast', () => {
   it('should not render without a release', () => {
     renderEditor(makeSnapshot({ latestRelease: null }));
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
+  });
+});
+
+describe('Easter egg counter', () => {
+  it('should stay hidden until the first easter egg is found', () => {
+    renderEditor();
+    expect(screen.queryByRole('button', { name: /Easter eggs found/ })).not.toBeInTheDocument();
+  });
+
+  it('should count each easter egg once', async () => {
+    const user = renderEditor();
+    const input = screen.getByRole('textbox', { name: 'Terminal command' });
+    await user.type(input, 'vim{Enter}');
+    await user.type(input, 'vim{Enter}');
+    await user.type(input, 'sudo ping magnus{Enter}');
+    expect(screen.getByRole('button', { name: /Easter eggs found: 2 of \d+/ })).toBeInTheDocument();
+  });
+
+  it('should count opening the .env tab', async () => {
+    const user = renderEditor();
+    await user.click(screen.getByRole('tab', { name: '.env' }));
+    expect(screen.getByRole('button', { name: /Easter eggs found: 1 of/ })).toBeInTheDocument();
+  });
+
+  it('should answer an easter egg search in the search panel', async () => {
+    const user = renderEditor();
+    await user.click(screen.getByRole('button', { name: 'Search' }));
+    await user.type(screen.getByRole('searchbox', { name: 'Search repos' }), 'easter');
+    expect(screen.getByText(/aren.t indexed/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Easter eggs found: 1 of/ })).toBeInTheDocument();
+  });
+});
+
+describe('Terminal history', () => {
+  it('should recall the previous command with the up arrow', async () => {
+    const user = renderEditor();
+    const input = screen.getByRole('textbox', { name: 'Terminal command' });
+    await user.type(input, 'whoami{Enter}');
+    await user.type(input, '{ArrowUp}');
+    expect(input).toHaveValue('whoami');
+  });
+});
+
+describe('Matrix', () => {
+  it('should rain over the editor and then stop', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    const user = renderEditor(makeSnapshot(), true);
+    await user.type(screen.getByRole('textbox', { name: 'Terminal command' }), 'matrix{Enter}');
+    expect(screen.getByTestId('matrix-rain')).toBeInTheDocument();
+    await act(async () => {
+      vi.advanceTimersByTime(6000);
+    });
+    expect(screen.queryByTestId('matrix-rain')).not.toBeInTheDocument();
+  });
+});
+
+describe('Konami code', () => {
+  it('should unlock the Synthwave theme', async () => {
+    const user = renderEditor();
+    await user.keyboard('{ArrowUp}{ArrowUp}{ArrowDown}{ArrowDown}{ArrowLeft}{ArrowRight}{ArrowLeft}{ArrowRight}ba');
+    expect(screen.getByRole('button', { name: 'Switch theme (current: Synthwave)' })).toBeInTheDocument();
   });
 });

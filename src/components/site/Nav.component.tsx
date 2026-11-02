@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';
 
 const NAV_LINKS = [
@@ -8,6 +11,7 @@ const NAV_LINKS = [
 ];
 
 export function Nav(): ReactNode {
+  const pathname = usePathname();
   return (
     <header className="tile flex flex-wrap items-center gap-4 rounded-full py-2.5 pl-5 pr-3 text-sm sm:gap-6">
       <Link href="/" className="font-mono font-medium">
@@ -19,7 +23,8 @@ export function Nav(): ReactNode {
           <Link
             key={link.href}
             href={link.href}
-            className="text-site-muted transition-colors duration-150 first:text-site-fg hover:text-site-fg focus-visible:text-site-fg"
+            aria-current={link.href === pathname ? 'page' : undefined}
+            className="text-site-muted transition-colors duration-150 hover:text-site-fg focus-visible:text-site-fg aria-[current=page]:text-site-fg"
           >
             {link.label}
           </Link>

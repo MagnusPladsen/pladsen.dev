@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { useSiteContent } from '@/components/site/SiteContentProvider.component';
+import { AppPreview } from '@/components/apps/AppPreview.component';
 import { FEATURED_APPS } from '@/lib/site-content';
 
 export function FeaturedApps(): ReactNode {
@@ -24,14 +25,7 @@ export function FeaturedApps(): ReactNode {
           const { name, desc } = content.featured[index];
           return (
             <a key={app.url} href={app.url} target="_blank" rel="noreferrer" className="tile flex flex-col overflow-hidden" style={{ animationDelay: `${0.1 + index * 0.07}s` }}>
-              <div className="h-36 px-3 pt-3" style={{ background: app.tint }}>
-                {app.screenshot ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={app.screenshot} alt="" className="h-full w-full rounded-t-lg object-cover object-top" />
-                ) : (
-                  <div className="h-full rounded-t-lg bg-site-bg opacity-80" />
-                )}
-              </div>
+              <AppPreview app={app} name={name} />
               <div className="flex grow flex-col gap-1.5 p-4">
                 <div className="flex items-center justify-between">
                   <h3 className="font-semibold">{name}</h3>

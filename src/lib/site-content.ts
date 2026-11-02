@@ -23,15 +23,16 @@ export interface SiteContent {
 export interface FeaturedApp {
   host: string;
   url: string;
+  repo: string;
   tint: string;
   screenshot?: string;
 }
 
 export const FEATURED_APPS: FeaturedApp[] = [
-  { host: 'gamedev-studio.pladsen.dev', url: 'https://gamedev-studio.pladsen.dev', tint: 'linear-gradient(135deg,#f97316,#fbbf24)' },
-  { host: 'proton-ish-site', url: 'https://proton-ish-site-magnus-pladsens-projects.vercel.app', tint: 'linear-gradient(135deg,#6366f1,#a855f7)' },
-  { host: 'cv-app-phi-eight.vercel.app', url: 'https://cv-app-phi-eight.vercel.app', tint: 'linear-gradient(135deg,#10b981,#84cc16)' },
-  { host: 'lane-kalkulator.vercel.app', url: 'https://lane-kalkulator.vercel.app', tint: 'linear-gradient(135deg,#0ea5e9,#22d3ee)' },
+  { host: 'gamedev-studio.pladsen.dev', url: 'https://gamedev-studio.pladsen.dev', repo: 'https://github.com/MagnusPladsen/gamedev-studio', screenshot: '/apps/gamedev-studio.jpg', tint: 'linear-gradient(135deg,#f97316,#fbbf24)' },
+  { host: 'proton-ish.pladsen.dev', url: 'https://proton-ish.pladsen.dev', repo: 'https://github.com/MagnusPladsen/Proton-ish', screenshot: '/apps/proton-ish.jpg', tint: 'linear-gradient(135deg,#6366f1,#a855f7)' },
+  { host: 'cvapp.pladsen.dev', url: 'https://cvapp.pladsen.dev', repo: 'https://github.com/MagnusPladsen/cv-app', screenshot: '/apps/cvapp.jpg', tint: 'linear-gradient(135deg,#10b981,#84cc16)' },
+  { host: 'lane-kalkulator.pladsen.dev', url: 'https://lane-kalkulator.pladsen.dev', repo: 'https://github.com/MagnusPladsen/lane-kalkulator', screenshot: '/apps/lane-kalkulator.jpg', tint: 'linear-gradient(135deg,#0ea5e9,#22d3ee)' },
 ];
 
 export const DEFAULT_CONTENT: SiteContent = {

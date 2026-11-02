@@ -24,8 +24,8 @@ describe('Hero', () => {
     renderInProvider(<Hero isCvAvailable />);
     expect(screen.getByRole('link', { name: /See my apps/ })).toHaveAttribute('href', '/apps');
     const cv = screen.getByRole('link', { name: /Download CV/ });
-    expect(cv).toHaveAttribute('href', '/cv.pdf');
-    expect(cv).toHaveAttribute('download', 'Magnus-Pladsen-CV.pdf');
+    expect(cv).toHaveAttribute('href', 'https://cv.pladsen.dev');
+    expect(cv).toHaveAttribute('target', '_blank');
     for (const social of contactInfo.socials) {
       expect(screen.getByRole('link', { name: new RegExp(social.application, 'i') })).toHaveAttribute('href', social.link);
     }
@@ -64,7 +64,7 @@ describe('LatestPushes', () => {
   it('should show an empty state when GitHub was unreachable', () => {
     renderInProvider(<LatestPushes snapshot={makeEmptySnapshot()} now={TEST_NOW} />);
     expect(screen.getByText(/couldn't reach GitHub/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Browse all repos/ })).toHaveAttribute('href', 'https://github.com/MagnusPladsen?tab=repositories');
+    expect(screen.getByRole('link', { name: /Browse all repos/ })).toHaveAttribute('href', '/repos');
   });
 });
 
