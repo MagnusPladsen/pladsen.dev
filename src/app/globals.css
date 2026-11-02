@@ -110,6 +110,23 @@
   .method-badge {
     @apply rounded bg-site-ok/15 px-1.5 py-0.5 text-[10px] font-medium text-site-ok;
   }
+  .code {
+    counter-reset: line;
+    @apply font-mono text-sm leading-[1.8];
+  }
+  .code-line {
+    @apply flex gap-5 whitespace-pre px-5 opacity-0 hover:bg-site-hover;
+    animation: line-in 0.3s ease forwards;
+  }
+  .code-line::before {
+    counter-increment: line;
+    content: counter(line);
+    @apply min-w-6 shrink-0 text-right text-site-faint;
+  }
+  .code-input {
+    @apply max-w-[48ch] border-0 border-b border-dashed border-transparent bg-transparent p-0 text-site-str outline-none hover:border-site-faint focus:border-site-accent focus:bg-site-hover;
+    font: inherit;
+  }
   .crt-scanlines {
     @apply pointer-events-none fixed inset-0 z-50;
     background: repeating-linear-gradient(0deg, rgb(0 0 0 / 0.35) 0 1px, transparent 1px 3px);

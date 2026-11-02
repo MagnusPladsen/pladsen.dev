@@ -1,6 +1,7 @@
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import type { ReactNode } from 'react';
+import { Editor } from '@/components/editor/Editor.component';
 import { FeaturedApps } from '@/components/home/FeaturedApps.component';
 import { GitHubStats } from '@/components/home/GitHubStats.component';
 import { Hero } from '@/components/home/Hero.component';
@@ -24,7 +25,7 @@ export default async function Home(): Promise<ReactNode> {
       <div className="relative mx-auto w-full max-w-[1180px] px-4 pt-5 sm:px-6">
         <Nav />
         <Hero isCvAvailable={isCvAvailable} />
-        <div data-testid="editor-slot" />
+        <Editor snapshot={snapshot} now={now} />
         <FeaturedApps />
         <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-3">
           <LatestPushes snapshot={snapshot} now={now} />
