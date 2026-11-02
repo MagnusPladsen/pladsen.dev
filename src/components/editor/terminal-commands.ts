@@ -38,7 +38,7 @@ const HELP: TerminalLine[] = [
   line('  git log                  latest real pushes'),
   line('  code --list-extensions   the stack'),
   line('  neofetch                 the whole picture'),
-  line('  hire magnus              get in touch'),
+  line('  contact magnus           get in touch'),
   line('  run                      build and preview page.tsx'),
   line('  theme dark|light|crt     change the look'),
   line('  history · clear          housekeeping'),
@@ -106,7 +106,7 @@ function getNeofetch({ snapshot, techNames }: TerminalContext): TerminalLine[] {
   ];
 }
 
-function getHire(): TerminalLine[] {
+function getContact(): TerminalLine[] {
   const [github, linkedin] = contactInfo.socials;
   return [
     line('$ bun add magnus', 'plain'),
@@ -170,7 +170,7 @@ function getStaticOutput(command: string, context: TerminalContext): CommandOutp
     'rm -rf /': () => ({ lines: [line('Nice try. This site is immutable (and on Vercel).', 'error')], egg: 'rm-rf' }),
     vim: () => ({ lines: [line('You are already in an editor. :q', 'warning')], egg: 'vim' }),
     exit: () => ({ lines: [line('There is no escape. You live here now.', 'warning')], egg: 'exit' }),
-    'hire magnus': () => ({ lines: getHire(), egg: 'hire' }),
+    'contact magnus': () => ({ lines: getContact(), egg: 'contact' }),
     coffee: () => ({ lines: COFFEE, egg: 'coffee' }),
     'brew coffee': () => ({ lines: COFFEE, egg: 'coffee' }),
     fortune: () => ({ lines: [line(FORTUNES[Math.floor(Math.random() * FORTUNES.length)], 'plain')], egg: 'fortune' }),
@@ -182,7 +182,7 @@ function getStaticOutput(command: string, context: TerminalContext): CommandOutp
       egg: 'yolo',
     }),
     ultrathink: () => ({
-      lines: [line('✻ Thinking…'), line('✻ Thinking harder…'), line('✻ Thinking really, really hard…'), line('⏺ Conclusion: hire Magnus.', 'success')],
+      lines: [line('✻ Thinking…'), line('✻ Thinking harder…'), line('✻ Thinking really, really hard…'), line('⏺ Conclusion: the answer was more easter eggs.', 'success')],
       egg: 'ultrathink',
     }),
     'make sandwich': () => ({ lines: [line('What? Make it yourself.', 'error')] }),

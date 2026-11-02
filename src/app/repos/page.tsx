@@ -12,7 +12,7 @@ export default async function ReposPage(): Promise<ReactNode> {
   const snapshot = await fetchGitHubSnapshot();
   const now = new Date().toISOString();
   return (
-    <SiteShell now={now}>
+    <SiteShell now={now} repos={snapshot.repos}>
       <RepoBrowser repos={snapshot.repos} now={now} />
     </SiteShell>
   );

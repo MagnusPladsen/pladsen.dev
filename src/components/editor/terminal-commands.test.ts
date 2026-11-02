@@ -9,7 +9,7 @@ const text = (input: string) => runTerminalCommand(input, context).lines.map((li
 
 describe('runTerminalCommand', () => {
   it('should list every everyday command for help', () => {
-    for (const command of ['whoami', 'ls', 'cat journey.md', 'git log', 'code --list-extensions', 'neofetch', 'hire magnus', 'run', 'theme', 'history', 'clear']) {
+    for (const command of ['whoami', 'ls', 'cat journey.md', 'git log', 'code --list-extensions', 'neofetch', 'contact magnus', 'run', 'theme', 'history', 'clear']) {
       expect(text('help')).toContain(command);
     }
   });
@@ -77,7 +77,7 @@ describe('runTerminalCommand', () => {
     ['exit', 'exit'],
     [':q', 'vim-escape'],
     [':wq', 'vim-escape'],
-    ['hire magnus', 'hire'],
+    ['contact magnus', 'contact'],
     ['coffee', 'coffee'],
     ['brew coffee', 'coffee'],
     ['git blame', 'blame'],
@@ -131,8 +131,14 @@ describe('runTerminalCommand', () => {
     expect(text('neofetch')).toContain(`${snapshot.totals.publicRepos}`);
   });
 
-  it('should link contact details for hire magnus', () => {
-    expect(text('hire magnus')).toContain('magnus_pladsen@hotmail.com');
+  it('should link contact details for contact magnus', () => {
+    expect(text('contact magnus')).toContain('magnus_pladsen@hotmail.com');
+  });
+
+  it('should never talk about hiring', () => {
+    for (const command of ['help', 'contact magnus', 'ultrathink']) {
+      expect(text(command).toLowerCase()).not.toContain('hire');
+    }
   });
 
   it('should joke about other package managers', () => {

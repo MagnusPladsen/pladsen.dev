@@ -13,7 +13,7 @@ export const EASTER_EGGS = {
   help: 'asked for help',
   exit: 'tried to exit',
   'vim-escape': 'escaped vim',
-  hire: 'hired Magnus',
+  contact: 'got in touch',
   coffee: 'brewed coffee',
   blame: 'git blame',
   fortune: 'read a fortune',

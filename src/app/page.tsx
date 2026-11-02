@@ -15,7 +15,7 @@ export default async function Home(): Promise<ReactNode> {
   const now = new Date().toISOString();
 
   return (
-    <SiteShell now={now}>
+    <SiteShell now={now} repos={snapshot.repos}>
       <Hero isCvAvailable={isCvAvailable()} />
       <Editor snapshot={snapshot} now={now} />
       <FeaturedApps />
