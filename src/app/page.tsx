@@ -3,11 +3,8 @@ import { Editor } from '@/components/editor/Editor.component';
 import { FeaturedApps } from '@/components/home/FeaturedApps.component';
 import { GitHubStats } from '@/components/home/GitHubStats.component';
 import { Hero } from '@/components/home/Hero.component';
-import { HomeFooter } from '@/components/home/HomeFooter.component';
 import { LatestPushes } from '@/components/home/LatestPushes.component';
-import { Backdrop } from '@/components/site/Backdrop.component';
-import { Nav } from '@/components/site/Nav.component';
-import { SiteContentProvider } from '@/components/site/SiteContentProvider.component';
+import { SiteShell } from '@/components/site/SiteShell.component';
 import { isCvAvailable } from '@/lib/cv';
 import { fetchGitHubSnapshot } from '@/lib/github/fetch-snapshot';
 
@@ -18,19 +15,14 @@ export default async function Home(): Promise<ReactNode> {
   const now = new Date().toISOString();
 
   return (
-    <SiteContentProvider>
-      <Backdrop />
-      <div className="relative mx-auto w-full max-w-[1180px] px-4 pt-5 sm:px-6">
-        <Nav />
-        <Hero isCvAvailable={isCvAvailable()} />
-        <Editor snapshot={snapshot} now={now} />
-        <FeaturedApps />
-        <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-3">
-          <LatestPushes snapshot={snapshot} now={now} />
-          <GitHubStats snapshot={snapshot} />
-        </div>
-        <HomeFooter deployedAt={process.env.BUILD_TIME ?? now} now={now} />
+    <SiteShell now={now}>
+      <Hero isCvAvailable={isCvAvailable()} />
+      <Editor snapshot={snapshot} now={now} />
+      <FeaturedApps />
+      <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <LatestPushes snapshot={snapshot} now={now} />
+        <GitHubStats snapshot={snapshot} />
       </div>
-    </SiteContentProvider>
+    </SiteShell>
   );
 }

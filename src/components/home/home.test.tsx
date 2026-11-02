@@ -64,7 +64,7 @@ describe('LatestPushes', () => {
   it('should show an empty state when GitHub was unreachable', () => {
     renderInProvider(<LatestPushes snapshot={makeEmptySnapshot()} now={TEST_NOW} />);
     expect(screen.getByText(/couldn't reach GitHub/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Browse all repos/ })).toHaveAttribute('href', 'https://github.com/MagnusPladsen?tab=repositories');
+    expect(screen.getByRole('link', { name: /Browse all repos/ })).toHaveAttribute('href', '/repos');
   });
 });
 
