@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode, type RefObject } from 'react';
+import { ChevronDown, ChevronUp, X } from 'lucide-react';
 import { useSiteContent } from '@/components/site/SiteContentProvider.component';
 import techData from '@/components/tech/tech.data';
 import type { GitHubSnapshot } from '@/lib/github/types';
@@ -98,12 +99,35 @@ function Output({ snapshot }: { snapshot: GitHubSnapshot }): ReactNode {
   );
 }
 
-export function BottomPanel({ snapshot }: { snapshot: GitHubSnapshot }): ReactNode {
+interface BottomPanelProps {
+  snapshot: GitHubSnapshot;
+  isMaximized: boolean;
+  onToggleMaximize: () => void;
+}
+
+const PANEL_ACTION = 'rounded p-0.5 text-site-dim transition-colors duration-150 hover:bg-site-hover hover:text-site-fg focus-visible:text-site-fg';
+
+function PanelActions({ isMaximized, onToggleMaximize }: Omit<BottomPanelProps, 'snapshot'>): ReactNode {
+  const { setPanelOpen } = useEditorState();
+  const MaximizeIcon = isMaximized ? ChevronDown : ChevronUp;
+  return (
+    <div className="ml-auto flex items-center gap-1 pb-1">
+      <button type="button" aria-label={isMaximized ? 'Restore panel size' : 'Maximize panel size'} title={isMaximized ? 'Restore Panel Size' : 'Maximize Panel Size'} onClick={onToggleMaximize} className={`${PANEL_ACTION} hidden md:block`}>
+        <MaximizeIcon aria-hidden="true" size={15} />
+      </button>
+      <button type="button" aria-label="Close panel" title="Hide Panel (⌘J)" onClick={() => setPanelOpen(false)} className={PANEL_ACTION}>
+        <X aria-hidden="true" size={15} />
+      </button>
+    </div>
+  );
+}
+
+export function BottomPanel({ snapshot, isMaximized, onToggleMaximize }: BottomPanelProps): ReactNode {
   const { panel, setPanel } = useEditorState();
   const scrollRef = useRef<HTMLDivElement>(null);
   return (
-    <div className="border-t border-site-line bg-site-panel">
-      <div role="tablist" aria-label="Panel" className="flex gap-5 px-5 pt-2">
+    <div className={`flex flex-col border-t border-site-line bg-site-panel ${isMaximized ? 'md:min-h-0 md:flex-1' : 'md:h-[var(--panel-height)]'}`}>
+      <div role="tablist" aria-label="Panel" className="flex items-end gap-5 px-5 pt-2">
         {PANEL_TABS.map((tab) => (
           <button
             key={tab.id}
@@ -116,8 +140,9 @@ export function BottomPanel({ snapshot }: { snapshot: GitHubSnapshot }): ReactNo
             {tab.label}
           </button>
         ))}
+        <PanelActions isMaximized={isMaximized} onToggleMaximize={onToggleMaximize} />
       </div>
-      <div ref={scrollRef} className="h-[150px] overflow-y-auto px-5 pb-3.5 pt-2 font-mono text-[13px] leading-[1.7]">
+      <div ref={scrollRef} className="h-[150px] overflow-y-auto md:h-auto md:min-h-0 md:flex-1 px-5 pb-3.5 pt-2 font-mono text-[13px] leading-[1.7]">
         {panel === 'terminal' && <Terminal snapshot={snapshot} scrollRef={scrollRef} />}
         {panel === 'problems' && (
           <>

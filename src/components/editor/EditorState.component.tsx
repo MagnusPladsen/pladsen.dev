@@ -10,8 +10,15 @@ export type SidebarView = 'explorer' | 'search' | 'scm' | 'extensions';
 export type PanelTab = 'terminal' | 'problems' | 'output';
 
 interface EditorStateValue {
-  tab: EditorTab;
+  tab: EditorTab | null;
   setTab: (tab: EditorTab) => void;
+  openTabs: EditorTab[];
+  closeTab: (tab: EditorTab) => void;
+  moveTab: (tab: EditorTab, before: EditorTab) => void;
+  isSidebarOpen: boolean;
+  setSidebarOpen: (isOpen: boolean) => void;
+  isPanelOpen: boolean;
+  setPanelOpen: (isOpen: boolean) => void;
   view: SidebarView;
   setView: (view: SidebarView) => void;
   isMobileSidebarOpen: boolean;
@@ -61,13 +68,26 @@ function writeFoundEggs(eggs: EasterEggId[]): void {
   }
 }
 
+function withoutTab(tabs: EditorTab[], tab: EditorTab): EditorTab[] {
+  return tabs.filter((open) => open !== tab);
+}
+
+function getNextActiveTab(tabs: EditorTab[], closing: EditorTab): EditorTab | null {
+  const index = tabs.indexOf(closing);
+  const remaining = withoutTab(tabs, closing);
+  return remaining[index] ?? remaining[index - 1] ?? null;
+}
+
 const EditorStateContext = createContext<EditorStateValue | null>(null);
 
 export function EditorStateProvider({ children }: { children: ReactNode }): ReactNode {
-  const [tab, setTab] = useState<EditorTab>('page.tsx');
+  const [tab, setActiveTab] = useState<EditorTab | null>('page.tsx');
+  const [openTabs, setOpenTabs] = useState<EditorTab[]>([...EDITOR_TABS]);
   const [view, setView] = useState<SidebarView>('explorer');
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const [panel, setPanel] = useState<PanelTab>('terminal');
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [panel, setPanelTab] = useState<PanelTab>('terminal');
+  const [isPanelOpen, setPanelOpen] = useState(true);
   const [selectedRepo, setSelectedRepo] = useState<string | null>(null);
   const [isPreviewOpen, setPreviewOpen] = useState(false);
   const [isMatrixOn, setMatrixOn] = useState(false);
@@ -77,6 +97,32 @@ export function EditorStateProvider({ children }: { children: ReactNode }): Reac
   const foundEggsRef = useRef(new Set<EasterEggId>());
 
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
+
+  const setTab = useCallback((next: EditorTab) => {
+    setOpenTabs((current) => (current.includes(next) ? current : [...current, next]));
+    setActiveTab(next);
+  }, []);
+
+  const closeTab = useCallback(
+    (closing: EditorTab) => {
+      if (closing === tab) setActiveTab(getNextActiveTab(openTabs, closing));
+      setOpenTabs((current) => withoutTab(current, closing));
+    },
+    [tab, openTabs],
+  );
+
+  const moveTab = useCallback((moving: EditorTab, before: EditorTab) => {
+    setOpenTabs((current) => {
+      const rest = withoutTab(current, moving);
+      const index = rest.indexOf(before);
+      return [...rest.slice(0, index), moving, ...rest.slice(index)];
+    });
+  }, []);
+
+  const setPanel = useCallback((next: PanelTab) => {
+    setPanelTab(next);
+    setPanelOpen(true);
+  }, []);
 
   const print = useCallback((lines: TerminalLine[]) => setTerminalLines((current) => [...current, ...lines].slice(-MAX_TERMINAL_LINES)), []);
 
@@ -109,7 +155,7 @@ export function EditorStateProvider({ children }: { children: ReactNode }): Reac
       setTimeout(() => print([{ text: '✓ compiled in 412ms · opening preview', tone: 'success' }]), COMPILE_DELAY_MS),
       setTimeout(() => setPreviewOpen(true), PREVIEW_DELAY_MS),
     );
-  }, [print, findEgg]);
+  }, [print, findEgg, setTab, setPanel]);
 
   const startMatrix = useCallback(() => {
     setMatrixOn(true);
@@ -118,10 +164,14 @@ export function EditorStateProvider({ children }: { children: ReactNode }): Reac
 
   const value = useMemo(
     () => ({
-      tab, setTab, view, setView, isMobileSidebarOpen, setMobileSidebarOpen, panel, setPanel, selectedRepo, setSelectedRepo, isPreviewOpen, setPreviewOpen,
+      tab, setTab, openTabs, closeTab, moveTab, isSidebarOpen, setSidebarOpen, isPanelOpen, setPanelOpen,
+      view, setView, isMobileSidebarOpen, setMobileSidebarOpen, panel, setPanel, selectedRepo, setSelectedRepo, isPreviewOpen, setPreviewOpen,
       terminalLines, print, clearTerminal: () => setTerminalLines([]), startRun, isMatrixOn, startMatrix, foundEggs, findEgg,
     }),
-    [tab, view, isMobileSidebarOpen, panel, selectedRepo, isPreviewOpen, terminalLines, print, startRun, isMatrixOn, startMatrix, foundEggs, findEgg],
+    [
+      tab, setTab, openTabs, closeTab, moveTab, isSidebarOpen, isPanelOpen, view, isMobileSidebarOpen, panel, setPanel, selectedRepo, isPreviewOpen,
+      terminalLines, print, startRun, isMatrixOn, startMatrix, foundEggs, findEgg,
+    ],
   );
   return <EditorStateContext.Provider value={value}>{children}</EditorStateContext.Provider>;
 }
