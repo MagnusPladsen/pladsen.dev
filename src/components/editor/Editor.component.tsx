@@ -67,9 +67,12 @@ function TabContent({ snapshot, now }: EditorProps): ReactNode {
 }
 
 function Sidebar({ snapshot, now }: EditorProps): ReactNode {
-  const { view } = useEditorState();
+  const { view, isMobileSidebarOpen } = useEditorState();
   return (
-    <aside aria-label="Sidebar" className="hidden h-[560px] w-[260px] shrink-0 overflow-y-auto border-r border-site-line bg-site-panel py-3 md:block">
+    <aside
+      aria-label="Sidebar"
+      className={`${isMobileSidebarOpen ? 'block' : 'hidden'} max-h-72 shrink-0 overflow-y-auto border-b border-site-line bg-site-panel py-3 md:block md:h-[560px] md:max-h-none md:w-[260px] md:border-b-0 md:border-r`}
+    >
       {view === 'explorer' && <Explorer />}
       {view === 'search' && <SearchPanel repos={snapshot.repos} />}
       {view === 'scm' && <SourceControl recent={snapshot.recent} now={now} />}

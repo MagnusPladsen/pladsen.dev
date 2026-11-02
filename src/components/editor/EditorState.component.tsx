@@ -13,6 +13,8 @@ interface EditorStateValue {
   setTab: (tab: EditorTab) => void;
   view: SidebarView;
   setView: (view: SidebarView) => void;
+  isMobileSidebarOpen: boolean;
+  setMobileSidebarOpen: (isOpen: boolean) => void;
   panel: PanelTab;
   setPanel: (panel: PanelTab) => void;
   selectedRepo: string | null;
@@ -39,6 +41,7 @@ const EditorStateContext = createContext<EditorStateValue | null>(null);
 export function EditorStateProvider({ children }: { children: ReactNode }): ReactNode {
   const [tab, setTab] = useState<EditorTab>('page.tsx');
   const [view, setView] = useState<SidebarView>('explorer');
+  const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [panel, setPanel] = useState<PanelTab>('terminal');
   const [selectedRepo, setSelectedRepo] = useState<string | null>(null);
   const [isPreviewOpen, setPreviewOpen] = useState(false);
@@ -64,10 +67,10 @@ export function EditorStateProvider({ children }: { children: ReactNode }): Reac
 
   const value = useMemo(
     () => ({
-      tab, setTab, view, setView, panel, setPanel, selectedRepo, setSelectedRepo, isPreviewOpen, setPreviewOpen,
+      tab, setTab, view, setView, isMobileSidebarOpen, setMobileSidebarOpen, panel, setPanel, selectedRepo, setSelectedRepo, isPreviewOpen, setPreviewOpen,
       terminalLines, print, clearTerminal: () => setTerminalLines([]), startRun,
     }),
-    [tab, view, panel, selectedRepo, isPreviewOpen, terminalLines, print, startRun],
+    [tab, view, isMobileSidebarOpen, panel, selectedRepo, isPreviewOpen, terminalLines, print, startRun],
   );
   return <EditorStateContext.Provider value={value}>{children}</EditorStateContext.Provider>;
 }

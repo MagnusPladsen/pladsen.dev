@@ -12,7 +12,11 @@ const VIEWS: { id: SidebarView; label: string; Icon: LucideIcon }[] = [
 ];
 
 export function ActivityBar({ extensionCount }: { extensionCount: number }): ReactNode {
-  const { view, setView } = useEditorState();
+  const { view, setView, isMobileSidebarOpen, setMobileSidebarOpen } = useEditorState();
+  const selectView = (id: SidebarView) => {
+    setMobileSidebarOpen(id !== view || !isMobileSidebarOpen);
+    setView(id);
+  };
   return (
     <nav aria-label="Activity bar" className="flex shrink-0 flex-row border-b border-site-line bg-site-panel md:w-12 md:flex-col md:border-b-0 md:border-r md:pt-1">
       {VIEWS.map(({ id, label, Icon }) => {
@@ -24,7 +28,7 @@ export function ActivityBar({ extensionCount }: { extensionCount: number }): Rea
             aria-label={label}
             aria-pressed={isActive}
             title={label}
-            onClick={() => setView(id)}
+            onClick={() => selectView(id)}
             className={`relative flex h-11 w-12 items-center justify-center border-b-2 transition-colors duration-150 md:border-b-0 md:border-l-2 ${
               isActive ? 'border-site-accent text-site-fg' : 'border-transparent text-site-dim hover:text-site-fg focus-visible:text-site-fg'
             }`}
