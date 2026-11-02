@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { makeSnapshot } from '@/test/snapshot';
 import { Nav } from './Nav.component';
+import { getPaletteItems } from './palette-items';
 
 const push = vi.fn();
 vi.mock('next/navigation', () => ({ usePathname: () => '/repos', useRouter: () => ({ push }) }));
@@ -60,6 +61,14 @@ describe('Command palette', () => {
     await user.type(screen.getByRole('combobox', { name: 'Search pages, apps and repos' }), 'gmdv');
     const options = within(screen.getByRole('listbox')).getAllByRole('option');
     expect(options.every((option) => /gamedev/i.test(option.textContent ?? ''))).toBe(true);
+  });
+
+  it('should list every app when the query is empty', async () => {
+    const user = renderNav();
+    await user.click(screen.getByRole('button', { name: /Search/ }));
+    const listedLabels = within(screen.getByRole('listbox')).getAllByRole('option').map((option) => option.textContent ?? '');
+    const appNames = getPaletteItems(repos).filter((item) => item.group === 'Apps').map((item) => item.label);
+    expect(appNames.every((name) => listedLabels.some((label) => label.includes(name)))).toBe(true);
   });
 
   it('should go to a page on Enter', async () => {

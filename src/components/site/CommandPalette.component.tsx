@@ -1,11 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useMemo, useState, type KeyboardEvent, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { fuzzyMatch } from '@/lib/fuzzy';
 import type { PaletteItem } from './palette-items';
 
-const MAX_RESULTS = 12;
 const LISTBOX_ID = 'command-palette-results';
 
 interface CommandPaletteProps {
@@ -17,7 +16,12 @@ export function CommandPalette({ items, onClose }: CommandPaletteProps): ReactNo
   const router = useRouter();
   const [query, setQuery] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
-  const results = useMemo(() => items.filter((item) => fuzzyMatch(item.label, query)).slice(0, MAX_RESULTS), [items, query]);
+  const results = useMemo(() => items.filter((item) => fuzzyMatch(item.label, query)), [items, query]);
+  const activeId = results[activeIndex] ? `palette-${results[activeIndex].id}` : undefined;
+
+  useEffect(() => {
+    if (activeId) document.getElementById(activeId)?.scrollIntoView?.({ block: 'nearest' });
+  }, [activeId]);
 
   const openItem = (item: PaletteItem) => {
     onClose();
@@ -52,7 +56,7 @@ export function CommandPalette({ items, onClose }: CommandPaletteProps): ReactNo
             aria-label="Search pages, apps and repos"
             aria-expanded="true"
             aria-controls={LISTBOX_ID}
-            aria-activedescendant={results[activeIndex] ? `palette-${results[activeIndex].id}` : undefined}
+            aria-activedescendant={activeId}
             value={query}
             onChange={(event) => {
               setQuery(event.target.value);
