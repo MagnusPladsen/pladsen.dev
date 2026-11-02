@@ -1,7 +1,7 @@
 import contactInfo from '@/lib/contactInfo';
 import { CV_URL } from '@/lib/cv';
 import type { Repo } from '@/lib/github/types';
-import { DEFAULT_CONTENT, FEATURED_APPS, MORE_APPS } from '@/lib/site-content';
+import { DEFAULT_CONTENT, FEATURED_APPS, MORE_APPS, type ListedApp } from '@/lib/site-content';
 
 export type PaletteGroup = 'Pages' | 'Links' | 'Apps' | 'Repos';
 
@@ -34,10 +34,10 @@ const LINKS: PaletteItem[] = [
 
 function getAppItems(): PaletteItem[] {
   const featured = FEATURED_APPS.map((app, index) => ({ ...app, name: DEFAULT_CONTENT.featured[index].name, isDiscontinued: false }));
-  return [...featured, ...MORE_APPS].map((app) => ({
+  return [...featured, ...MORE_APPS].map((app: Pick<ListedApp, 'name' | 'host' | 'url' | 'repo' | 'isDiscontinued' | 'isWip'>) => ({
     id: `app-${app.name}`,
     label: app.name,
-    hint: app.isDiscontinued ? 'discontinued · source' : app.host,
+    hint: app.isDiscontinued ? 'discontinued · source' : app.isWip ? `wip · ${app.host}` : app.host,
     group: 'Apps',
     href: app.isDiscontinued ? app.repo : app.url,
     isExternal: true,

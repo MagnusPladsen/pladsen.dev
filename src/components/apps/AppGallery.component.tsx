@@ -17,8 +17,9 @@ const FILTERS: { id: AppFilter; label: string; matches: (app: ListedApp) => bool
 
 const LINK_CLASS = 'inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 font-mono text-xs transition-opacity duration-150 hover:opacity-80';
 
-function AppStatus({ isDiscontinued }: { isDiscontinued: boolean }): ReactNode {
+function AppStatus({ isDiscontinued, isWip }: Pick<ListedApp, 'isDiscontinued' | 'isWip'>): ReactNode {
   if (isDiscontinued) return <span className="rounded-full border border-site-tile-border px-2 font-mono text-[11px] text-site-muted">discontinued</span>;
+  if (isWip) return <span className="rounded-full border border-site-warn/40 px-2 font-mono text-[11px] text-site-warn">wip</span>;
   return (
     <span className="flex items-center gap-1.5 font-mono text-[11px] text-site-ok">
       <span className="live-dot" />
@@ -34,7 +35,7 @@ function AppCard({ app }: { app: ListedApp }): ReactNode {
       <div className="flex grow flex-col gap-2 p-5">
         <div className="flex items-center justify-between gap-2">
           <h2 className="text-lg font-semibold">{app.name}</h2>
-          <AppStatus isDiscontinued={app.isDiscontinued} />
+          <AppStatus isDiscontinued={app.isDiscontinued} isWip={app.isWip} />
         </div>
         {app.desc && <p className="text-sm text-site-muted">{app.desc}</p>}
         <p className="font-mono text-[11px] text-site-dim">{app.host}</p>

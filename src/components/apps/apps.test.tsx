@@ -44,6 +44,13 @@ describe('AppGallery', () => {
     }
   });
 
+  it('should mark work-in-progress apps and still link them', () => {
+    renderGallery();
+    const card = screen.getAllByRole('article').find((article) => within(article).queryByText('polish-quest'))!;
+    expect(within(card).getByText('wip')).toBeInTheDocument();
+    expect(within(card).getByRole('link', { name: /Open app/ })).toHaveAttribute('href', 'https://polish.pladsen.dev');
+  });
+
   it('should filter to discontinued apps', async () => {
     const user = renderGallery();
     await user.click(screen.getByRole('button', { name: /Discontinued/ }));
