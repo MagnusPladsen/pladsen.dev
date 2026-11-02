@@ -4,7 +4,10 @@ import type { ReactNode } from 'react';
 import { useSiteContent } from '@/components/site/SiteContentProvider.component';
 import type { GitHubSnapshot } from '@/lib/github/types';
 import { EDITOR_TABS, EditorStateProvider, useEditorState, type EditorTab } from './EditorState.component';
+import { LivePreview } from './LivePreview.component';
 import { Minimap } from './Minimap.component';
+import { BottomPanel } from './panel/BottomPanel.component';
+import { ReleaseToast } from './ReleaseToast.component';
 import { ActivityBar } from './sidebar/ActivityBar.component';
 import { Explorer } from './sidebar/Explorer.component';
 import { EXTENSION_COUNT, Extensions } from './sidebar/Extensions.component';
@@ -97,8 +100,19 @@ function StatusBar(): ReactNode {
   );
 }
 
+function RunButton(): ReactNode {
+  const { tab, startRun } = useEditorState();
+  if (tab !== 'page.tsx') return null;
+  return (
+    <button type="button" aria-label="Run page.tsx" title="Run" onClick={startRun} className="px-4 text-sm text-site-ok hover:opacity-80">
+      ▶
+    </button>
+  );
+}
+
 function EditorWindow({ snapshot, now }: EditorProps): ReactNode {
-  const { tab } = useEditorState();
+  const { tab, isPreviewOpen } = useEditorState();
+  const isPreviewVisible = isPreviewOpen && tab === 'page.tsx';
   return (
     <section aria-label="Code editor" className="tile overflow-clip rounded-[14px] shadow-[0_40px_120px_-40px_rgb(0_0_0/0.9)]" style={{ animationDelay: '1.1s' }}>
       <div className="flex items-center gap-2 border-b border-site-line bg-site-panel px-3.5 py-2.5">
@@ -113,6 +127,7 @@ function EditorWindow({ snapshot, now }: EditorProps): ReactNode {
         <div className="flex min-w-0 grow flex-col">
           <div className="flex items-stretch border-b border-site-line bg-site-panel">
             <TabBar />
+            <RunButton />
           </div>
           <div className="px-5 py-2 font-mono text-xs text-site-faint">
             src › app › {tab}
@@ -127,10 +142,13 @@ function EditorWindow({ snapshot, now }: EditorProps): ReactNode {
             <div className="relative min-w-0 grow overflow-auto pb-6 pt-1">
               <TabContent snapshot={snapshot} now={now} />
             </div>
+            {isPreviewVisible && <LivePreview />}
             <Minimap />
           </div>
+          <BottomPanel snapshot={snapshot} />
         </div>
       </div>
+      <ReleaseToast release={snapshot.latestRelease} now={now} />
       <StatusBar />
     </section>
   );
