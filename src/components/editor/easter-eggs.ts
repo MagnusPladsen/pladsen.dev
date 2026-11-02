@@ -27,6 +27,7 @@ export const EASTER_EGGS = {
   konami: 'Konami code',
   claude: 'launched Claude Code',
   yolo: 'tried to skip permissions',
+  'claude-code': 'typed the package name',
   slash: 'used a slash command',
   ultrathink: 'ultrathought',
 } as const;

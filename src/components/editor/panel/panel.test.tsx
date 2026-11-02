@@ -18,6 +18,7 @@ function renderEditor(snapshot: GitHubSnapshot = makeSnapshot(), hasFakeTimers =
 
 afterEach(() => {
   vi.useRealTimers();
+  vi.restoreAllMocks();
   window.localStorage.clear();
 });
 
@@ -28,6 +29,15 @@ describe('Terminal', () => {
     await user.type(input, 'whoami{Enter}');
     expect(screen.getByText(/Magnus Pladsen — Full-stack developer/)).toBeInTheDocument();
     expect(input).toHaveValue('');
+  });
+
+  it('should scroll to the newest output when a command prints', async () => {
+    vi.spyOn(Element.prototype, 'scrollHeight', 'get').mockReturnValue(900);
+    const setScrollTop = vi.spyOn(Element.prototype, 'scrollTop', 'set');
+    const user = renderEditor();
+    setScrollTop.mockClear();
+    await user.type(screen.getByRole('textbox', { name: 'Terminal command' }), 'help{Enter}');
+    expect(setScrollTop).toHaveBeenCalledWith(900);
   });
 });
 

@@ -127,7 +127,7 @@ const CLAUDE_WELCOME: TerminalLine[] = [
   line('│   cwd: ~/pladsen.dev                     │', 'plain'),
   line('╰──────────────────────────────────────────╯', 'plain'),
   line('> build me a portfolio with too many easter eggs'),
-  line('⏺ On it. Adding easter egg #31…', 'success'),
+  line(`⏺ On it. Adding easter egg #${EASTER_EGG_COUNT + 1}…`, 'success'),
 ];
 
 const SLASH_COMMANDS: Record<string, TerminalLine[]> = {
@@ -180,6 +180,14 @@ function getStaticOutput(command: string, context: TerminalContext): CommandOutp
     'claude --dangerously-skip-permissions': () => ({
       lines: [line('Nice try. Even Claude asks before touching prod.', 'warning'), line('Permission denied. Permission to deny: granted.', 'error')],
       egg: 'yolo',
+    }),
+    'claude-code': () => ({
+      lines: [
+        line('zsh: command not found: claude-code', 'error'),
+        line('Did you mean: claude', 'warning'),
+        line('(the package is @anthropic-ai/claude-code. the command is just claude. everyone types it once.)', 'plain'),
+      ],
+      egg: 'claude-code',
     }),
     ultrathink: () => ({
       lines: [line('✻ Thinking…'), line('✻ Thinking harder…'), line('✻ Thinking really, really hard…'), line('⏺ Conclusion: the answer was more easter eggs.', 'success')],

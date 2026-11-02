@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type KeyboardEvent, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode, type RefObject } from 'react';
 import { useSiteContent } from '@/components/site/SiteContentProvider.component';
 import techData from '@/components/tech/tech.data';
 import type { GitHubSnapshot } from '@/lib/github/types';
@@ -23,11 +23,16 @@ const TONE_CLASSES: Record<TerminalTone, string> = {
 
 const TECH_NAMES = techData.flatMap((group) => group.techs.map((tech) => tech.name));
 
-function Terminal({ snapshot }: { snapshot: GitHubSnapshot }): ReactNode {
+function Terminal({ snapshot, scrollRef }: { snapshot: GitHubSnapshot; scrollRef: RefObject<HTMLDivElement | null> }): ReactNode {
   const { content, setTheme } = useSiteContent();
   const { terminalLines, print, clearTerminal, startRun, startMatrix, findEgg } = useEditorState();
   const [command, setCommand] = useState('');
   const [history, setHistory] = useState<string[]>([]);
+
+  useEffect(() => {
+    const scroller = scrollRef.current;
+    if (scroller) scroller.scrollTop = scroller.scrollHeight;
+  }, [terminalLines, scrollRef]);
 
   const runCommand = () => {
     const trimmed = command.trim();
@@ -95,6 +100,7 @@ function Output({ snapshot }: { snapshot: GitHubSnapshot }): ReactNode {
 
 export function BottomPanel({ snapshot }: { snapshot: GitHubSnapshot }): ReactNode {
   const { panel, setPanel } = useEditorState();
+  const scrollRef = useRef<HTMLDivElement>(null);
   return (
     <div className="border-t border-site-line bg-site-panel">
       <div role="tablist" aria-label="Panel" className="flex gap-5 px-5 pt-2">
@@ -111,8 +117,8 @@ export function BottomPanel({ snapshot }: { snapshot: GitHubSnapshot }): ReactNo
           </button>
         ))}
       </div>
-      <div className="h-[150px] overflow-y-auto px-5 pb-3.5 pt-2 font-mono text-[13px] leading-[1.7]">
-        {panel === 'terminal' && <Terminal snapshot={snapshot} />}
+      <div ref={scrollRef} className="h-[150px] overflow-y-auto px-5 pb-3.5 pt-2 font-mono text-[13px] leading-[1.7]">
+        {panel === 'terminal' && <Terminal snapshot={snapshot} scrollRef={scrollRef} />}
         {panel === 'problems' && (
           <>
             <div className="text-site-muted">
