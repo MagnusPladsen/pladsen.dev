@@ -21,7 +21,7 @@ describe('SiteContentProvider', () => {
     const { result } = renderHook(() => useSiteContent(), { wrapper });
     act(() => result.current.setField(['featured', 1, 'desc'], 'x'));
     expect(result.current.content.featured[1].desc).toBe('x');
-    expect(result.current.content.featured[0].name).toBe('gamedev-studio');
+    expect(result.current.content.featured[0].name).toBe('Flightdeck');
   });
 
   it('keeps the last valid accent', () => {

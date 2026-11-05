@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
-import type { ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { describe, expect, it } from 'vitest';
-import { SiteContentProvider } from '@/components/site/SiteContentProvider.component';
+import { SiteContentProvider, useSiteContent } from '@/components/site/SiteContentProvider.component';
 import contactInfo from '@/lib/contactInfo';
 import { TEST_NOW, makeEmptySnapshot, makeSnapshot } from '@/test/snapshot';
 import { FeaturedApps } from './FeaturedApps.component';
@@ -10,6 +10,17 @@ import { Hero } from './Hero.component';
 import { LatestPushes } from './LatestPushes.component';
 
 const renderInProvider = (node: ReactNode) => render(<SiteContentProvider>{node}</SiteContentProvider>);
+
+function ClearDescription({ index }: { index: number }): null {
+  const { setField } = useSiteContent();
+  const hasCleared = useRef(false);
+  useEffect(() => {
+    if (hasCleared.current) return;
+    hasCleared.current = true;
+    setField(['featured', index, 'desc'], '');
+  }, [index, setField]);
+  return null;
+}
 
 describe('Hero', () => {
   it('should show the name, role and both taglines', () => {
@@ -86,12 +97,17 @@ describe('FeaturedApps', () => {
   it('should render the four featured apps in order', () => {
     renderInProvider(<FeaturedApps />);
     const names = screen.getAllByRole('heading', { level: 3 }).map((heading) => heading.textContent);
-    expect(names).toEqual(['gamedev-studio', 'Proton-ish', 'cv-app-new', 'lane-kalkulator']);
+    expect(names).toEqual(['Flightdeck', 'Dev Studio', 'Proton-ish', 'CV app']);
   });
 
   it('should leave out the description line for an app without one', () => {
-    renderInProvider(<FeaturedApps />);
-    const card = screen.getByRole('link', { name: /lane-kalkulator/ });
+    renderInProvider(
+      <>
+        <ClearDescription index={3} />
+        <FeaturedApps />
+      </>,
+    );
+    const card = screen.getByRole('link', { name: /CV app/ });
     expect(within(card).queryByTestId('app-desc')).not.toBeInTheDocument();
   });
 });

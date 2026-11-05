@@ -36,14 +36,15 @@ export interface ListedApp extends FeaturedApp {
 }
 
 export const FEATURED_APPS: FeaturedApp[] = [
-  { host: 'gamedev-studio.pladsen.dev', url: 'https://gamedev-studio.pladsen.dev', repo: 'https://github.com/MagnusPladsen/dev-studio', screenshot: '/apps/gamedev-studio.jpg', tint: '#f97316' },
+  { host: 'flightdeck.pladsen.dev', url: 'https://flightdeck.pladsen.dev', repo: 'https://github.com/MagnusPladsen/flightdeck', screenshot: '/apps/flightdeck.jpg', tint: '#ff7a1a' },
+  { host: 'dev-studio.pladsen.dev', url: 'https://dev-studio.pladsen.dev', repo: 'https://github.com/MagnusPladsen/dev-studio', screenshot: '/apps/dev-studio.jpg', tint: '#14b8a6' },
   { host: 'proton-ish.pladsen.dev', url: 'https://proton-ish.pladsen.dev', repo: 'https://github.com/MagnusPladsen/Proton-ish', screenshot: '/apps/proton-ish.jpg', tint: '#6366f1' },
   { host: 'cvapp.pladsen.dev', url: 'https://cvapp.pladsen.dev', repo: 'https://github.com/MagnusPladsen/cv-app', screenshot: '/apps/cvapp.jpg', tint: '#10b981' },
-  { host: 'lane-kalkulator.pladsen.dev', url: 'https://lane-kalkulator.pladsen.dev', repo: 'https://github.com/MagnusPladsen/lane-kalkulator', screenshot: '/apps/lane-kalkulator.jpg', tint: '#0ea5e9' },
 ];
 
 export const MORE_APPS: ListedApp[] = [
-  { name: 'dev-studio', desc: 'Task board, canvas, linked wiki and notebook for any software project. Built from the same monorepo as gamedev-studio.', host: 'dev-studio.pladsen.dev', url: 'https://dev-studio.pladsen.dev', repo: 'https://github.com/MagnusPladsen/dev-studio', screenshot: '/apps/dev-studio.jpg', tint: '#14b8a6', isDiscontinued: false },
+  { name: 'gamedev-studio', desc: 'Free, open source game development toolkit — pixel art, music, SFX, tilemaps and more.', host: 'gamedev-studio.pladsen.dev', url: 'https://gamedev-studio.pladsen.dev', repo: 'https://github.com/MagnusPladsen/dev-studio', screenshot: '/apps/gamedev-studio.jpg', tint: '#f97316', isDiscontinued: false },
+  { name: 'lane-kalkulator', desc: '', host: 'lane-kalkulator.pladsen.dev', url: 'https://lane-kalkulator.pladsen.dev', repo: 'https://github.com/MagnusPladsen/lane-kalkulator', screenshot: '/apps/lane-kalkulator.jpg', tint: '#0ea5e9', isDiscontinued: false },
   { name: 'hordejakten-2026', desc: '', host: 'horde.pladsen.dev', url: 'https://horde.pladsen.dev', repo: 'https://github.com/MagnusPladsen/hordejakten-2026', screenshot: '/apps/hordejakten.jpg', tint: '#ec4899', isDiscontinued: false },
   { name: 'vaktmester-herstad', desc: '', host: 'herstad.pladsen.dev', url: 'https://herstad.pladsen.dev', repo: 'https://github.com/MagnusPladsen/vaktmester-herstad', screenshot: '/apps/herstad.jpg', tint: '#10b981', isDiscontinued: false },
   { name: 'ozonbehandling', desc: '', host: 'ozonbehandling.no', url: 'https://www.ozonbehandling.no', repo: 'https://github.com/MagnusPladsen/ozonbehandling', screenshot: '/apps/ozonbehandling.jpg', tint: '#0ea5e9', isDiscontinued: false },
@@ -68,10 +69,10 @@ export const DEFAULT_CONTENT: SiteContent = {
   },
   ctas: { primary: 'See my apps', cv: 'Download CV' },
   featured: [
-    { name: 'gamedev-studio', desc: 'Free, open source game development toolkit — pixel art, music, SFX, tilemaps and more.' },
+    { name: 'Flightdeck', desc: 'Agent and system monitor for developers. Lives in the macOS menu bar.' },
+    { name: 'Dev Studio', desc: 'Task board, canvas, linked wiki and notebook for any software project.' },
     { name: 'Proton-ish', desc: 'Steam Play for macOS' },
-    { name: 'cv-app-new', desc: 'New version of cv-app created from the beginning.' },
-    { name: 'lane-kalkulator', desc: '' },
+    { name: 'CV app', desc: 'New version of cv-app created from the beginning.' },
   ],
   copy: { featuredTitle: 'featured apps', allApps: 'All apps', browseRepos: 'Browse all repos', footer: 'deployed' },
 };

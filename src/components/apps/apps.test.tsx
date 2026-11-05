@@ -23,7 +23,7 @@ describe('AppGallery', () => {
     renderGallery();
     const cards = screen.getAllByRole('article');
     expect(cards).toHaveLength(ALL_APP_COUNT);
-    expect(within(cards[0]).getByRole('heading')).toHaveTextContent('gamedev-studio');
+    expect(within(cards[0]).getByRole('heading')).toHaveTextContent('Flightdeck');
     expect(within(cards[FEATURED_APPS.length]).getByRole('heading')).toHaveTextContent(MORE_APPS[0].name);
   });
 
@@ -61,6 +61,6 @@ describe('AppGallery', () => {
     renderGallery();
     const [first] = screen.getAllByRole('article');
     expect(within(first).getByTestId('app-window')).toHaveTextContent(FEATURED_APPS[0].host);
-    expect(within(first).getByRole('img', { name: /gamedev-studio screenshot/ })).toHaveAttribute('src', '/apps/gamedev-studio.jpg');
+    expect(within(first).getByRole('img', { name: /Flightdeck screenshot/ })).toHaveAttribute('src', '/apps/flightdeck.jpg');
   });
 });

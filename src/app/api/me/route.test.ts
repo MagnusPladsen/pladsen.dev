@@ -28,7 +28,7 @@ describe('GET /api/me', () => {
 
   it('should list featured apps with their urls', async () => {
     const { featuredApps } = await getMe();
-    expect(featuredApps).toContainEqual(expect.objectContaining({ name: 'gamedev-studio', url: 'https://gamedev-studio.pladsen.dev' }));
+    expect(featuredApps).toContainEqual(expect.objectContaining({ name: 'Flightdeck', url: 'https://flightdeck.pladsen.dev' }));
   });
 
   it('should only link the CV when the build found it', async () => {
